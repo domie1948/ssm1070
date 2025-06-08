@@ -1,0 +1,201 @@
+<div class="tabbable">
+	<ul class="nav nav-tabs" id="myTab">
+		<li class="active"><a data-toggle="tab" href="#home"> <i
+				class="green ace-icon fa fa-list-alt bigger-120"></i> 列表
+		</a></li>
+		@if(auth.hasPermission("user:member:add")){
+		<li class=""><a data-toggle="tab" href="#profile">
+		<i class="green ace-icon fa fa-plus bigger-120"></i> 添加
+		</a></li>
+		@}
+	</ul>
+
+	<div class="tab-content">
+		<div id="home" class="tab-pane active clearfix">
+			<form action="${ctxPath}/member/list" method="post" id="search-form" target="list-page" class="clearfix">
+				
+				<div class="pull-left width-30">
+					<label>描述：</label>
+					<input type="text" class="width-80" name="description"/>
+				</div>
+				<div class="pull-left"><span class="btn btn-info btn-sm " id="search-btn">查 询</span></div>
+			</form>
+			<hr/>
+			<div id="list-page"></div>
+			<script type="text/javascript">
+				$("#search-form").getPageList({'submitBtnId':'search-btn'})
+			</script>
+		</div>
+
+		<div id="profile" class="tab-pane">
+			<form action="${ctxPath!}/member/save" method="post" id="member-save-form">
+								<div class="center padding-10">
+			<label>会员名称：</label>
+			<input type="text" class="width-50" name="memberName" datatype="*"  nullmsg="请输入会员名称！"/>
+		</div>
+		<div class="center padding-10">
+			<label>真实姓名：</label>
+			<input type="text" class="width-50" name="memberTruename" datatype="*"  nullmsg="请输入真实姓名！"/>
+		</div>
+		<div class="center padding-10">
+			<label>memberAvatar：</label>
+			<input type="text" class="width-50" name="memberAvatar" datatype="*"  nullmsg="请输入memberAvatar！"/>
+		</div>
+		<div class="center padding-10">
+			<label>会员性别：</label>
+			<input type="text" class="width-50" name="memberSex" datatype="*"  nullmsg="请输入会员性别！"/>
+		</div>
+		<div class="center padding-10">
+			<label>生日：</label>
+			<input type="text" class="width-50" name="memberBirthday" datatype="*"  nullmsg="请输入生日！"/>
+		</div>
+		<div class="center padding-10">
+			<label>memberPasswd：</label>
+			<input type="text" class="width-50" name="memberPasswd" datatype="*"  nullmsg="请输入memberPasswd！"/>
+		</div>
+		<div class="center padding-10">
+			<label>会员邮箱：</label>
+			<input type="text" class="width-50" name="memberEmail" datatype="*"  nullmsg="请输入会员邮箱！"/>
+		</div>
+		<div class="center padding-10">
+			<label>qq：</label>
+			<input type="text" class="width-50" name="memberQq" datatype="*"  nullmsg="请输入qq！"/>
+		</div>
+		<div class="center padding-10">
+			<label>阿里旺旺：</label>
+			<input type="text" class="width-50" name="memberWw" datatype="*"  nullmsg="请输入阿里旺旺！"/>
+		</div>
+		<div class="center padding-10">
+			<label>登录次数：</label>
+			<input type="text" class="width-50" name="memberLoginNum" datatype="*"  nullmsg="请输入登录次数！"/>
+		</div>
+		<div class="center padding-10">
+			<label>会员注册时间：</label>
+			<input type="text" class="width-50" name="createTime" datatype="*"  nullmsg="请输入会员注册时间！"/>
+		</div>
+		<div class="center padding-10">
+			<label>当前登录时间：</label>
+			<input type="text" class="width-50" name="memberLoginTime" datatype="*"  nullmsg="请输入当前登录时间！"/>
+		</div>
+		<div class="center padding-10">
+			<label>上次登录时间：</label>
+			<input type="text" class="width-50" name="memberOldLogin_time" datatype="*"  nullmsg="请输入上次登录时间！"/>
+		</div>
+		<div class="center padding-10">
+			<label>当前登录ip：</label>
+			<input type="text" class="width-50" name="memberLoginIp" datatype="*"  nullmsg="请输入当前登录ip！"/>
+		</div>
+		<div class="center padding-10">
+			<label>上次登录ip：</label>
+			<input type="text" class="width-50" name="memberOldLogin_ip" datatype="*"  nullmsg="请输入上次登录ip！"/>
+		</div>
+		<div class="center padding-10">
+			<label>memberOpenid：</label>
+			<input type="text" class="width-50" name="memberOpenid" datatype="*"  nullmsg="请输入memberOpenid！"/>
+		</div>
+		<div class="center padding-10">
+			<label>memberInfo：</label>
+			<input type="text" class="width-50" name="memberInfo" datatype="*"  nullmsg="请输入memberInfo！"/>
+		</div>
+		<div class="center padding-10">
+			<label>会员消费积分：</label>
+			<input type="text" class="width-50" name="memberConsumePoints" datatype="*"  nullmsg="请输入会员消费积分！"/>
+		</div>
+		<div class="center padding-10">
+			<label>会员等级积分：</label>
+			<input type="text" class="width-50" name="memberRankPoints" datatype="*"  nullmsg="请输入会员等级积分！"/>
+		</div>
+		<div class="center padding-10">
+			<label>预存款可用金额：</label>
+			<input type="text" class="width-50" name="availablePredeposit" datatype="*"  nullmsg="请输入预存款可用金额！"/>
+		</div>
+		<div class="center padding-10">
+			<label>预存款冻结金额：</label>
+			<input type="text" class="width-50" name="freezePredeposit" datatype="*"  nullmsg="请输入预存款冻结金额！"/>
+		</div>
+		<div class="center padding-10">
+			<label>是否允许举报(1可以/2不可以)：</label>
+			<input type="text" class="width-50" name="informAllow" datatype="*"  nullmsg="请输入是否允许举报(1可以/2不可以)！"/>
+		</div>
+		<div class="center padding-10">
+			<label>会员是否有购买权限 1为开启 0为关闭：</label>
+			<input type="text" class="width-50" name="isBuy" datatype="*"  nullmsg="请输入会员是否有购买权限 1为开启 0为关闭！"/>
+		</div>
+		<div class="center padding-10">
+			<label>会员是否有咨询和发送站内信的权限 1为开启 0为关闭：</label>
+			<input type="text" class="width-50" name="isAllowtalk" datatype="*"  nullmsg="请输入会员是否有咨询和发送站内信的权限 1为开启 0为关闭！"/>
+		</div>
+		<div class="center padding-10">
+			<label>会员的开启状态 1为开启 0为关闭：</label>
+			<input type="text" class="width-50" name="memberState" datatype="*"  nullmsg="请输入会员的开启状态 1为开启 0为关闭！"/>
+		</div>
+		<div class="center padding-10">
+			<label>会员信用：</label>
+			<input type="text" class="width-50" name="memberCredit" datatype="*"  nullmsg="请输入会员信用！"/>
+		</div>
+		<div class="center padding-10">
+			<label>sns空间访问次数：</label>
+			<input type="text" class="width-50" name="memberSnsvisitnum" datatype="*"  nullmsg="请输入sns空间访问次数！"/>
+		</div>
+		<div class="center padding-10">
+			<label>地区ID：</label>
+			<input type="text" class="width-50" name="memberAreaid" datatype="*"  nullmsg="请输入地区ID！"/>
+		</div>
+		<div class="center padding-10">
+			<label>城市ID：</label>
+			<input type="text" class="width-50" name="memberCityid" datatype="*"  nullmsg="请输入城市ID！"/>
+		</div>
+		<div class="center padding-10">
+			<label>省份ID：</label>
+			<input type="text" class="width-50" name="memberProvinceid" datatype="*"  nullmsg="请输入省份ID！"/>
+		</div>
+		<div class="center padding-10">
+			<label>地区内容：</label>
+			<input type="text" class="width-50" name="memberAreainfo" datatype="*"  nullmsg="请输入地区内容！"/>
+		</div>
+		<div class="center padding-10">
+			<label>隐私设定：</label>
+			<input type="text" class="width-50" name="memberPrivacy" datatype="*"  nullmsg="请输入隐私设定！"/>
+		</div>
+		<div class="center padding-10">
+			<label>删除标志：</label>
+			<input type="text" class="width-50" name="isDel" datatype="*"  nullmsg="请输入删除标志！"/>
+		</div>
+		<div class="center padding-10">
+			<label>signCode：</label>
+			<input type="text" class="width-50" name="signCode" datatype="*"  nullmsg="请输入signCode！"/>
+		</div>
+		<div class="center padding-10">
+			<label>signCodeState：</label>
+			<input type="text" class="width-50" name="signCodeState" datatype="*"  nullmsg="请输入signCodeState！"/>
+		</div>
+		<div class="center padding-10">
+			<label>手机号：</label>
+			<input type="text" class="width-50" name="memberMobile" datatype="*"  nullmsg="请输入手机号！"/>
+		</div>
+		<div class="center padding-10">
+			<label>会员等级id：</label>
+			<input type="text" class="width-50" name="memberGradeid" datatype="*"  nullmsg="请输入会员等级id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>用户类型：</label>
+			<input type="text" class="width-50" name="memberType" datatype="*"  nullmsg="请输入用户类型！"/>
+		</div>
+
+				<!-- <div class="center padding-10" >
+					<label style="vertical-align: top;">描述：</label>
+					<textarea type="text" class="width-50" name="description"></textarea>
+				</div> -->
+				<div class="margin-t15">
+					<span class="btn btn-info btn-block bigger-120" id="member-save-btn">保 存</span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+//日期框
+$('.date-picker').datepicker();
+</script>
+
+<#save isHide="yes" subBtnId="member-save-btn" formId="member-save-form" />

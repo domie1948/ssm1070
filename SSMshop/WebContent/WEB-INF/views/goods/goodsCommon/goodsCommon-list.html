@@ -1,0 +1,124 @@
+<table class="table table-striped table-bordered table-hover nomargin-bottom">
+	<thead>
+		<tr>
+								<th class="center">商品公共表id</th>
+			<th class="center">商品名称</th>
+			<th class="center">商品广告词</th>
+			<th class="center">商品分类</th>
+			<th class="center">商品分类</th>
+			<th class="center">店铺id</th>
+			<th class="center">店铺名称</th>
+			<th class="center">规格名称</th>
+			<th class="center">规格值</th>
+			<th class="center">品牌id</th>
+			<th class="center">品牌名称</th>
+			<th class="center">类型id</th>
+			<th class="center">商品主图</th>
+			<th class="center">商品属性</th>
+			<th class="center">商品内容</th>
+			<th class="center">商品状态 0下架，1正常，10违规（禁售）</th>
+			<th class="center">违规原因</th>
+			<th class="center">商品审核 1通过，0未通过，10审核中</th>
+			<th class="center">审核失败原因</th>
+			<th class="center">商品锁定 0未锁，1已锁</th>
+			<th class="center">商品添加时间</th>
+			<th class="center">上架时间</th>
+			<th class="center">规格名称序列化（下标为规格id）</th>
+			<th class="center">商品价格</th>
+			<th class="center">市场价</th>
+			<th class="center">成本价</th>
+			<th class="center">折扣</th>
+			<th class="center">商家编号</th>
+			<th class="center">运费模板</th>
+			<th class="center">运费模板名称</th>
+			<th class="center">商品推荐 1是，0否，默认为0</th>
+			<th class="center">运费 0为免运费</th>
+			<th class="center">是否开具增值税发票 1是，0否</th>
+			<th class="center">一级地区id</th>
+			<th class="center">二级地区id</th>
+			<th class="center">店铺分类id 首尾用,隔开</th>
+			<th class="center">顶部关联板式</th>
+			<th class="center">底部关联板式</th>
+			<th class="center">是否删除0:未删除;1:已删除</th>
+			<th class="center">创建时间</th>
+			<th class="center">修改时间</th>
+
+			<th class="center">操作</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@for(item in page.list){
+			<tr>
+								<td class="center">${item.goodsCommonid!}</td>
+			<td class="center">${item.goodsName!}</td>
+			<td class="center">${item.goodsJingle!}</td>
+			<td class="center">${item.gcId!}</td>
+			<td class="center">${item.gcName!}</td>
+			<td class="center">${item.storeId!}</td>
+			<td class="center">${item.storeName!}</td>
+			<td class="center">${item.specName!}</td>
+			<td class="center">${item.specValue!}</td>
+			<td class="center">${item.brandId!}</td>
+			<td class="center">${item.brandName!}</td>
+			<td class="center">${item.typeId!}</td>
+			<td class="center">${item.goodsImage!}</td>
+			<td class="center">${item.goodsAttr!}</td>
+			<td class="center">${item.goodsBody!}</td>
+			<td class="center">${item.goodsState!}</td>
+			<td class="center">${item.goodsStateremark!}</td>
+			<td class="center">${item.goodsVerify!}</td>
+			<td class="center">${item.goodsVerifyremark!}</td>
+			<td class="center">${item.goodsLock!}</td>
+			<td class="center">${item.goodsAddtime!}</td>
+			<td class="center">${item.goodsSelltime!}</td>
+			<td class="center">${item.goodsSpecname!}</td>
+			<td class="center">${item.goodsPrice!}</td>
+			<td class="center">${item.goodsMarketprice!}</td>
+			<td class="center">${item.goodsCostprice!}</td>
+			<td class="center">${item.goodsDiscount!}</td>
+			<td class="center">${item.goodsSerial!}</td>
+			<td class="center">${item.transportId!}</td>
+			<td class="center">${item.transportTitle!}</td>
+			<td class="center">${item.goodsCommend!}</td>
+			<td class="center">${item.goodsFreight!}</td>
+			<td class="center">${item.goodsVat!}</td>
+			<td class="center">${item.areaid1!}</td>
+			<td class="center">${item.areaid2!}</td>
+			<td class="center">${item.goodsStcids!}</td>
+			<td class="center">${item.plateidTop!}</td>
+			<td class="center">${item.plateidBottom!}</td>
+			<td class="center">${item.isDel!}</td>
+			<td class="center">${item.createTime!}</td>
+			<td class="center">${item.updateTime!}</td>
+
+				<td class="center">
+					<div class="hidden-sm hidden-xs action-buttons">
+					@if(auth.hasPermission("goods:goodsCommon:edit")){
+						<a class="green" href="javascript:void(0);" 
+							data-mode="page" data-title="编辑"
+							data-url="${ctxPath}/goodsCommon/edit/showlayer"
+							data-data="{id:'${item.id}'}" 
+						>
+							<i class="ace-icon fa fa-pencil bigger-130"></i>
+						</a>
+					@}
+					
+					@if(auth.hasPermission("goods:goodsCommon:delete")){
+						<a class="red" href="javascript:void(0);" 
+							data-mode="del" data-title="删除操作"
+							data-msg="你确定删除此数据吗?"
+							data-url="${ctxPath}/goodsCommon/delete" 
+							data-data="{id:'${item.id}',type:'${item.type}',value:'${item.value}'}"
+						>
+							<i class="ace-icon fa fa-trash-o bigger-130"></i>
+						</a>
+					@}
+					</div>
+				</td>
+			</tr>
+		@}
+	</tbody>
+</table>
+<div class="space-8"></div>
+<#paginate page="${page}" />

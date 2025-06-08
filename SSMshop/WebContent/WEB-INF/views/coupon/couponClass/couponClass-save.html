@@ -1,0 +1,51 @@
+<div class="layer">
+	<form name="FormPost" id="couponClass-save" class="FormGrid"  method="post"
+		action="${ctxPath}/couponClass/save">
+		
+		<input type="hidden" value="${couponClass.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">父类id</td>
+			<td class="DataTD width-100"><input type="text" name="classParentId" datatype="*"
+			nullmsg="请输入父类id！" value="${couponClass.classParentId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">分类名称</td>
+			<td class="DataTD width-100"><input type="text" name="className" datatype="*"
+			nullmsg="请输入分类名称！" value="${couponClass.className!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">排序</td>
+			<td class="DataTD width-100"><input type="text" name="classSort" datatype="*"
+			nullmsg="请输入排序！" value="${couponClass.classSort!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">是否显示：0显示,1不显示</td>
+			<td class="DataTD width-100"><input type="text" name="classShow" datatype="*"
+			nullmsg="请输入是否显示：0显示,1不显示！" value="${couponClass.classShow!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${couponClass.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="couponClass-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

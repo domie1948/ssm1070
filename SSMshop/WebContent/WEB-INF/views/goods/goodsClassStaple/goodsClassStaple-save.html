@@ -1,0 +1,71 @@
+<div class="layer">
+	<form name="FormPost" id="goodsClassStaple-save" class="FormGrid"  method="post"
+		action="${ctxPath}/goodsClassStaple/save">
+		
+		<input type="hidden" value="${goodsClassStaple.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">常用分类id</td>
+			<td class="DataTD width-100"><input type="text" name="stapleId" datatype="*"
+			nullmsg="请输入常用分类id！" value="${goodsClassStaple.stapleId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">常用分类名称</td>
+			<td class="DataTD width-100"><input type="text" name="stapleName" datatype="*"
+			nullmsg="请输入常用分类名称！" value="${goodsClassStaple.stapleName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">一级分类id</td>
+			<td class="DataTD width-100"><input type="text" name="gcId1" datatype="*"
+			nullmsg="请输入一级分类id！" value="${goodsClassStaple.gcId1!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">二级商品分类</td>
+			<td class="DataTD width-100"><input type="text" name="gcId2" datatype="*"
+			nullmsg="请输入二级商品分类！" value="${goodsClassStaple.gcId2!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">三级商品分类</td>
+			<td class="DataTD width-100"><input type="text" name="gcId3" datatype="*"
+			nullmsg="请输入三级商品分类！" value="${goodsClassStaple.gcId3!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">类型id</td>
+			<td class="DataTD width-100"><input type="text" name="typeId" datatype="*"
+			nullmsg="请输入类型id！" value="${goodsClassStaple.typeId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">会员id</td>
+			<td class="DataTD width-100"><input type="text" name="memberId" datatype="*"
+			nullmsg="请输入会员id！" value="${goodsClassStaple.memberId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">计数器</td>
+			<td class="DataTD width-100"><input type="text" name="counter" datatype="*"
+			nullmsg="请输入计数器！" value="${goodsClassStaple.counter!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${goodsClassStaple.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="goodsClassStaple-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

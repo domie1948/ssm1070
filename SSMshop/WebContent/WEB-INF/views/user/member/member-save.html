@@ -1,0 +1,221 @@
+<div class="layer">
+	<form name="FormPost" id="member-save" class="FormGrid"  method="post"
+		action="${ctxPath}/member/save">
+		
+		<input type="hidden" value="${member.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">会员名称</td>
+			<td class="DataTD width-100"><input type="text" name="memberName" datatype="*"
+			nullmsg="请输入会员名称！" value="${member.memberName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">真实姓名</td>
+			<td class="DataTD width-100"><input type="text" name="memberTruename" datatype="*"
+			nullmsg="请输入真实姓名！" value="${member.memberTruename!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">memberAvatar</td>
+			<td class="DataTD width-100"><input type="text" name="memberAvatar" datatype="*"
+			nullmsg="请输入memberAvatar！" value="${member.memberAvatar!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">会员性别</td>
+			<td class="DataTD width-100"><input type="text" name="memberSex" datatype="*"
+			nullmsg="请输入会员性别！" value="${member.memberSex!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">生日</td>
+			<td class="DataTD width-100"><input type="text" name="memberBirthday" datatype="*"
+			nullmsg="请输入生日！" value="${member.memberBirthday!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">memberPasswd</td>
+			<td class="DataTD width-100"><input type="text" name="memberPasswd" datatype="*"
+			nullmsg="请输入memberPasswd！" value="${member.memberPasswd!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">会员邮箱</td>
+			<td class="DataTD width-100"><input type="text" name="memberEmail" datatype="*"
+			nullmsg="请输入会员邮箱！" value="${member.memberEmail!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">qq</td>
+			<td class="DataTD width-100"><input type="text" name="memberQq" datatype="*"
+			nullmsg="请输入qq！" value="${member.memberQq!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">阿里旺旺</td>
+			<td class="DataTD width-100"><input type="text" name="memberWw" datatype="*"
+			nullmsg="请输入阿里旺旺！" value="${member.memberWw!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">登录次数</td>
+			<td class="DataTD width-100"><input type="text" name="memberLoginNum" datatype="*"
+			nullmsg="请输入登录次数！" value="${member.memberLoginNum!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">会员注册时间</td>
+			<td class="DataTD width-100"><input type="text" name="createTime" datatype="*"
+			nullmsg="请输入会员注册时间！" value="${member.createTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">当前登录时间</td>
+			<td class="DataTD width-100"><input type="text" name="memberLoginTime" datatype="*"
+			nullmsg="请输入当前登录时间！" value="${member.memberLoginTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">上次登录时间</td>
+			<td class="DataTD width-100"><input type="text" name="memberOldLogin_time" datatype="*"
+			nullmsg="请输入上次登录时间！" value="${member.memberOldLogin_time!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">当前登录ip</td>
+			<td class="DataTD width-100"><input type="text" name="memberLoginIp" datatype="*"
+			nullmsg="请输入当前登录ip！" value="${member.memberLoginIp!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">上次登录ip</td>
+			<td class="DataTD width-100"><input type="text" name="memberOldLogin_ip" datatype="*"
+			nullmsg="请输入上次登录ip！" value="${member.memberOldLogin_ip!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">memberOpenid</td>
+			<td class="DataTD width-100"><input type="text" name="memberOpenid" datatype="*"
+			nullmsg="请输入memberOpenid！" value="${member.memberOpenid!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">memberInfo</td>
+			<td class="DataTD width-100"><input type="text" name="memberInfo" datatype="*"
+			nullmsg="请输入memberInfo！" value="${member.memberInfo!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">会员消费积分</td>
+			<td class="DataTD width-100"><input type="text" name="memberConsumePoints" datatype="*"
+			nullmsg="请输入会员消费积分！" value="${member.memberConsumePoints!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">会员等级积分</td>
+			<td class="DataTD width-100"><input type="text" name="memberRankPoints" datatype="*"
+			nullmsg="请输入会员等级积分！" value="${member.memberRankPoints!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">预存款可用金额</td>
+			<td class="DataTD width-100"><input type="text" name="availablePredeposit" datatype="*"
+			nullmsg="请输入预存款可用金额！" value="${member.availablePredeposit!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">预存款冻结金额</td>
+			<td class="DataTD width-100"><input type="text" name="freezePredeposit" datatype="*"
+			nullmsg="请输入预存款冻结金额！" value="${member.freezePredeposit!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">是否允许举报(1可以/2不可以)</td>
+			<td class="DataTD width-100"><input type="text" name="informAllow" datatype="*"
+			nullmsg="请输入是否允许举报(1可以/2不可以)！" value="${member.informAllow!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">会员是否有购买权限 1为开启 0为关闭</td>
+			<td class="DataTD width-100"><input type="text" name="isBuy" datatype="*"
+			nullmsg="请输入会员是否有购买权限 1为开启 0为关闭！" value="${member.isBuy!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">会员是否有咨询和发送站内信的权限 1为开启 0为关闭</td>
+			<td class="DataTD width-100"><input type="text" name="isAllowtalk" datatype="*"
+			nullmsg="请输入会员是否有咨询和发送站内信的权限 1为开启 0为关闭！" value="${member.isAllowtalk!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">会员的开启状态 1为开启 0为关闭</td>
+			<td class="DataTD width-100"><input type="text" name="memberState" datatype="*"
+			nullmsg="请输入会员的开启状态 1为开启 0为关闭！" value="${member.memberState!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">会员信用</td>
+			<td class="DataTD width-100"><input type="text" name="memberCredit" datatype="*"
+			nullmsg="请输入会员信用！" value="${member.memberCredit!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">sns空间访问次数</td>
+			<td class="DataTD width-100"><input type="text" name="memberSnsvisitnum" datatype="*"
+			nullmsg="请输入sns空间访问次数！" value="${member.memberSnsvisitnum!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">地区ID</td>
+			<td class="DataTD width-100"><input type="text" name="memberAreaid" datatype="*"
+			nullmsg="请输入地区ID！" value="${member.memberAreaid!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">城市ID</td>
+			<td class="DataTD width-100"><input type="text" name="memberCityid" datatype="*"
+			nullmsg="请输入城市ID！" value="${member.memberCityid!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">省份ID</td>
+			<td class="DataTD width-100"><input type="text" name="memberProvinceid" datatype="*"
+			nullmsg="请输入省份ID！" value="${member.memberProvinceid!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">地区内容</td>
+			<td class="DataTD width-100"><input type="text" name="memberAreainfo" datatype="*"
+			nullmsg="请输入地区内容！" value="${member.memberAreainfo!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">隐私设定</td>
+			<td class="DataTD width-100"><input type="text" name="memberPrivacy" datatype="*"
+			nullmsg="请输入隐私设定！" value="${member.memberPrivacy!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">删除标志</td>
+			<td class="DataTD width-100"><input type="text" name="isDel" datatype="*"
+			nullmsg="请输入删除标志！" value="${member.isDel!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">signCode</td>
+			<td class="DataTD width-100"><input type="text" name="signCode" datatype="*"
+			nullmsg="请输入signCode！" value="${member.signCode!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">signCodeState</td>
+			<td class="DataTD width-100"><input type="text" name="signCodeState" datatype="*"
+			nullmsg="请输入signCodeState！" value="${member.signCodeState!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">手机号</td>
+			<td class="DataTD width-100"><input type="text" name="memberMobile" datatype="*"
+			nullmsg="请输入手机号！" value="${member.memberMobile!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">会员等级id</td>
+			<td class="DataTD width-100"><input type="text" name="memberGradeid" datatype="*"
+			nullmsg="请输入会员等级id！" value="${member.memberGradeid!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">用户类型</td>
+			<td class="DataTD width-100"><input type="text" name="memberType" datatype="*"
+			nullmsg="请输入用户类型！" value="${member.memberType!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${member.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="member-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

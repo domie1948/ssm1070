@@ -1,0 +1,56 @@
+<div class="layer">
+	<form name="FormPost" id="goodsRecommend-save" class="FormGrid"  method="post"
+		action="${ctxPath}/goodsRecommend/save">
+		
+		<input type="hidden" value="${goodsRecommend.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">id</td>
+			<td class="DataTD width-100"><input type="text" name="recommendId" datatype="*"
+			nullmsg="请输入id！" value="${goodsRecommend.recommendId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">名字</td>
+			<td class="DataTD width-100"><input type="text" name="recommendName" datatype="*"
+			nullmsg="请输入名字！" value="${goodsRecommend.recommendName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">描述</td>
+			<td class="DataTD width-100"><input type="text" name="recommendInfo" datatype="*"
+			nullmsg="请输入描述！" value="${goodsRecommend.recommendInfo!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">是否启用0启用,1停用</td>
+			<td class="DataTD width-100"><input type="text" name="recommendUse" datatype="*"
+			nullmsg="请输入是否启用0启用,1停用！" value="${goodsRecommend.recommendUse!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">创建时间</td>
+			<td class="DataTD width-100"><input type="text" name="createTime" datatype="*"
+			nullmsg="请输入创建时间！" value="${goodsRecommend.createTime!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${goodsRecommend.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="goodsRecommend-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

@@ -1,0 +1,73 @@
+package com.zsCat.web.[model].controller;
+
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import com.zsCat.web.[model].service.[entityClass]Service;
+import com.github.pagehelper.PageInfo;
+import com.zsCat.web.[model].model.[entityClass];
+	/**
+	 * 
+	 * @author [author] [date]
+	 * @Email: 951449465@qq.com
+	 * @version 4.0v
+	 *	[description]
+	 */
+@Controller
+@RequestMapping("[lowerentity]")
+public class [entityClass]Controller {
+
+	@Resource
+	private [entityClass]Service [entityClass]Service;
+	
+	@RequestMapping
+	public String to[entityClass](Model model){
+		return "[model]/[lowerentity]/[lowerentity]";
+	}
+	
+	/**
+	 * 添加或更新区域
+	 * @param params
+	 * @return
+	 */
+	@RequestMapping(value = "save", method = RequestMethod.POST)
+	public @ResponseBody Integer save(@ModelAttribute [entityClass] [entityClass]) {
+		return [entityClass]Service.save[entityClass]([entityClass]);
+	}
+	
+	/**
+	 * 删除字典
+	* @param id
+	* @return
+	 */
+	@RequestMapping(value="delete",method=RequestMethod.POST)
+	public @ResponseBody Integer del(@ModelAttribute [entityClass] [entityClass]){
+		return [entityClass]Service.delete[entityClass]([entityClass]);
+	}
+	
+	/**
+	 * 分页显示字典table
+	 * @param params
+	 * @return
+	 */
+	@RequestMapping(value = "list", method = RequestMethod.POST)
+	public String list(int pageNum,int pageSize,@ModelAttribute [entityClass] [entityClass], Model model) {
+		PageInfo<[entityClass]> page = [entityClass]Service.selectPage(pageNum, pageSize, [entityClass]);
+		model.addAttribute("page", page);
+		return "[model]/[lowerentity]/[lowerentity]-list";
+	}
+	
+	@RequestMapping(value="{mode}/showlayer",method=RequestMethod.POST)
+	public String showLayer(Long id, Model model){
+		[entityClass] [lowerentity] = [entityClass]Service.selectByPrimaryKey(id);
+		model.addAttribute("[lowerentity]", [lowerentity]);
+		return "[model]/[lowerentity]/[lowerentity]-save";
+	}
+	
+}

@@ -1,0 +1,81 @@
+<div class="layer">
+	<form name="FormPost" id="goodsSpec-save" class="FormGrid"  method="post"
+		action="${ctxPath}/goodsSpec/save">
+		
+		<input type="hidden" value="${goodsSpec.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">商品规格索引id</td>
+			<td class="DataTD width-100"><input type="text" name="goodsSpecId" datatype="*"
+			nullmsg="请输入商品规格索引id！" value="${goodsSpec.goodsSpecId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品id</td>
+			<td class="DataTD width-100"><input type="text" name="goodsId" datatype="*"
+			nullmsg="请输入商品id！" value="${goodsSpec.goodsId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">规格名称</td>
+			<td class="DataTD width-100"><input type="text" name="specName" datatype="*"
+			nullmsg="请输入规格名称！" value="${goodsSpec.specName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">规格商品价格</td>
+			<td class="DataTD width-100"><input type="text" name="specGoodsPrice" datatype="*"
+			nullmsg="请输入规格商品价格！" value="${goodsSpec.specGoodsPrice!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">规格商品库存</td>
+			<td class="DataTD width-100"><input type="text" name="specGoodsStorage" datatype="*"
+			nullmsg="请输入规格商品库存！" value="${goodsSpec.specGoodsStorage!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">售出数量</td>
+			<td class="DataTD width-100"><input type="text" name="specSalenum" datatype="*"
+			nullmsg="请输入售出数量！" value="${goodsSpec.specSalenum!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">规格商品颜色</td>
+			<td class="DataTD width-100"><input type="text" name="specGoodsColor" datatype="*"
+			nullmsg="请输入规格商品颜色！" value="${goodsSpec.specGoodsColor!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">规格商品编号</td>
+			<td class="DataTD width-100"><input type="text" name="specGoodsSerial" datatype="*"
+			nullmsg="请输入规格商品编号！" value="${goodsSpec.specGoodsSerial!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品规格序列化</td>
+			<td class="DataTD width-100"><input type="text" name="specGoodsSpec" datatype="*"
+			nullmsg="请输入商品规格序列化！" value="${goodsSpec.specGoodsSpec!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">是否开启规格,1:开启，0:关闭</td>
+			<td class="DataTD width-100"><input type="text" name="specIsopen" datatype="*"
+			nullmsg="请输入是否开启规格,1:开启，0:关闭！" value="${goodsSpec.specIsopen!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${goodsSpec.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="goodsSpec-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

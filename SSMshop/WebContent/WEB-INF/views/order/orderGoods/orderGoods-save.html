@@ -1,0 +1,111 @@
+<div class="layer">
+	<form name="FormPost" id="orderGoods-save" class="FormGrid"  method="post"
+		action="${ctxPath}/orderGoods/save">
+		
+		<input type="hidden" value="${orderGoods.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">订单id</td>
+			<td class="DataTD width-100"><input type="text" name="orderId" datatype="*"
+			nullmsg="请输入订单id！" value="${orderGoods.orderId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品id</td>
+			<td class="DataTD width-100"><input type="text" name="goodsId" datatype="*"
+			nullmsg="请输入商品id！" value="${orderGoods.goodsId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品名称</td>
+			<td class="DataTD width-100"><input type="text" name="goodsName" datatype="*"
+			nullmsg="请输入商品名称！" value="${orderGoods.goodsName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">规格id</td>
+			<td class="DataTD width-100"><input type="text" name="specId" datatype="*"
+			nullmsg="请输入规格id！" value="${orderGoods.specId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">规格描述</td>
+			<td class="DataTD width-100"><input type="text" name="specInfo" datatype="*"
+			nullmsg="请输入规格描述！" value="${orderGoods.specInfo!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品价格</td>
+			<td class="DataTD width-100"><input type="text" name="goodsPrice" datatype="*"
+			nullmsg="请输入商品价格！" value="${orderGoods.goodsPrice!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品数量</td>
+			<td class="DataTD width-100"><input type="text" name="goodsNum" datatype="*"
+			nullmsg="请输入商品数量！" value="${orderGoods.goodsNum!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品图片</td>
+			<td class="DataTD width-100"><input type="text" name="goodsImage" datatype="*"
+			nullmsg="请输入商品图片！" value="${orderGoods.goodsImage!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">退货数量</td>
+			<td class="DataTD width-100"><input type="text" name="goodsReturnnum" datatype="*"
+			nullmsg="请输入退货数量！" value="${orderGoods.goodsReturnnum!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">店铺ID</td>
+			<td class="DataTD width-100"><input type="text" name="storesId" datatype="*"
+			nullmsg="请输入店铺ID！" value="${orderGoods.storesId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">评价状态 0为评价，1已评价</td>
+			<td class="DataTD width-100"><input type="text" name="evaluationStatus" datatype="*"
+			nullmsg="请输入评价状态 0为评价，1已评价！" value="${orderGoods.evaluationStatus!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">评价时间</td>
+			<td class="DataTD width-100"><input type="text" name="evaluationTime" datatype="*"
+			nullmsg="请输入评价时间！" value="${orderGoods.evaluationTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品实际成交价</td>
+			<td class="DataTD width-100"><input type="text" name="goodsPayPrice" datatype="*"
+			nullmsg="请输入商品实际成交价！" value="${orderGoods.goodsPayPrice!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">买家ID</td>
+			<td class="DataTD width-100"><input type="text" name="buyerId" datatype="*"
+			nullmsg="请输入买家ID！" value="${orderGoods.buyerId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">佣金比例</td>
+			<td class="DataTD width-100"><input type="text" name="commisRate" datatype="*"
+			nullmsg="请输入佣金比例！" value="${orderGoods.commisRate!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品最底级分类ID</td>
+			<td class="DataTD width-100"><input type="text" name="gcId" datatype="*"
+			nullmsg="请输入商品最底级分类ID！" value="${orderGoods.gcId!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${orderGoods.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="orderGoods-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

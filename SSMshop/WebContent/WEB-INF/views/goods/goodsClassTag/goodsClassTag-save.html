@@ -1,0 +1,71 @@
+<div class="layer">
+	<form name="FormPost" id="goodsClassTag-save" class="FormGrid"  method="post"
+		action="${ctxPath}/goodsClassTag/save">
+		
+		<input type="hidden" value="${goodsClassTag.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">TAGid</td>
+			<td class="DataTD width-100"><input type="text" name="gcTagId" datatype="*"
+			nullmsg="请输入TAGid！" value="${goodsClassTag.gcTagId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">一级分类id</td>
+			<td class="DataTD width-100"><input type="text" name="gcId1" datatype="*"
+			nullmsg="请输入一级分类id！" value="${goodsClassTag.gcId1!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">二级分类id</td>
+			<td class="DataTD width-100"><input type="text" name="gcId2" datatype="*"
+			nullmsg="请输入二级分类id！" value="${goodsClassTag.gcId2!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">三级分类id</td>
+			<td class="DataTD width-100"><input type="text" name="gcId3" datatype="*"
+			nullmsg="请输入三级分类id！" value="${goodsClassTag.gcId3!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">分类TAG名称</td>
+			<td class="DataTD width-100"><input type="text" name="gcTagName" datatype="*"
+			nullmsg="请输入分类TAG名称！" value="${goodsClassTag.gcTagName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">分类TAG值</td>
+			<td class="DataTD width-100"><input type="text" name="gcTagValue" datatype="*"
+			nullmsg="请输入分类TAG值！" value="${goodsClassTag.gcTagValue!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品分类id</td>
+			<td class="DataTD width-100"><input type="text" name="gcId" datatype="*"
+			nullmsg="请输入商品分类id！" value="${goodsClassTag.gcId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">类型id</td>
+			<td class="DataTD width-100"><input type="text" name="typeId" datatype="*"
+			nullmsg="请输入类型id！" value="${goodsClassTag.typeId!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${goodsClassTag.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="goodsClassTag-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

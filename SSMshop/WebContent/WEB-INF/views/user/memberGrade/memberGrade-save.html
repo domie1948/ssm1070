@@ -1,0 +1,56 @@
+<div class="layer">
+	<form name="FormPost" id="memberGrade-save" class="FormGrid"  method="post"
+		action="${ctxPath}/memberGrade/save">
+		
+		<input type="hidden" value="${memberGrade.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">等级名称</td>
+			<td class="DataTD width-100"><input type="text" name="gradeName" datatype="*"
+			nullmsg="请输入等级名称！" value="${memberGrade.gradeName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">所需积分</td>
+			<td class="DataTD width-100"><input type="text" name="integration" datatype="*"
+			nullmsg="请输入所需积分！" value="${memberGrade.integration!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">等级所对应的图片</td>
+			<td class="DataTD width-100"><input type="text" name="gradeImg" datatype="*"
+			nullmsg="请输入等级所对应的图片！" value="${memberGrade.gradeImg!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">优惠百分比</td>
+			<td class="DataTD width-100"><input type="text" name="preferential" datatype="*"
+			nullmsg="请输入优惠百分比！" value="${memberGrade.preferential!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">是否是默认</td>
+			<td class="DataTD width-100"><input type="text" name="isDefault" datatype="*"
+			nullmsg="请输入是否是默认！" value="${memberGrade.isDefault!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${memberGrade.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="memberGrade-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

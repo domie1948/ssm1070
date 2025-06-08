@@ -1,0 +1,96 @@
+<div class="layer">
+	<form name="FormPost" id="goodsClass-save" class="FormGrid"  method="post"
+		action="${ctxPath}/goodsClass/save">
+		
+		<input type="hidden" value="${goodsClass.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">分类名称</td>
+			<td class="DataTD width-100"><input type="text" name="gcName" datatype="*"
+			nullmsg="请输入分类名称！" value="${goodsClass.gcName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">分类图片</td>
+			<td class="DataTD width-100"><input type="text" name="gcPic" datatype="*"
+			nullmsg="请输入分类图片！" value="${goodsClass.gcPic!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">类型id</td>
+			<td class="DataTD width-100"><input type="text" name="typeId" datatype="*"
+			nullmsg="请输入类型id！" value="${goodsClass.typeId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">类型名称</td>
+			<td class="DataTD width-100"><input type="text" name="typeName" datatype="*"
+			nullmsg="请输入类型名称！" value="${goodsClass.typeName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">父ID</td>
+			<td class="DataTD width-100"><input type="text" name="gcParentId" datatype="*"
+			nullmsg="请输入父ID！" value="${goodsClass.gcParentId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">排序</td>
+			<td class="DataTD width-100"><input type="text" name="gcSort" datatype="*"
+			nullmsg="请输入排序！" value="${goodsClass.gcSort!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">前台显示，0为否，1为是，默认为1</td>
+			<td class="DataTD width-100"><input type="text" name="gcShow" datatype="*"
+			nullmsg="请输入前台显示，0为否，1为是，默认为1！" value="${goodsClass.gcShow!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">名称</td>
+			<td class="DataTD width-100"><input type="text" name="gcTitle" datatype="*"
+			nullmsg="请输入名称！" value="${goodsClass.gcTitle!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">关键词</td>
+			<td class="DataTD width-100"><input type="text" name="gcKeywords" datatype="*"
+			nullmsg="请输入关键词！" value="${goodsClass.gcKeywords!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">描述</td>
+			<td class="DataTD width-100"><input type="text" name="gcDescription" datatype="*"
+			nullmsg="请输入描述！" value="${goodsClass.gcDescription!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">层级path</td>
+			<td class="DataTD width-100"><input type="text" name="gcIdpath" datatype="*"
+			nullmsg="请输入层级path！" value="${goodsClass.gcIdpath!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">费用比例</td>
+			<td class="DataTD width-100"><input type="text" name="expenScale" datatype="*"
+			nullmsg="请输入费用比例！" value="${goodsClass.expenScale!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">是否关联子分类 0否, 1是</td>
+			<td class="DataTD width-100"><input type="text" name="isRelate" datatype="*"
+			nullmsg="请输入是否关联子分类 0否, 1是！" value="${goodsClass.isRelate!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${goodsClass.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="goodsClass-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

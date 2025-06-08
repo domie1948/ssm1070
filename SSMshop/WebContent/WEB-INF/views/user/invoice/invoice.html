@@ -1,0 +1,109 @@
+<div class="tabbable">
+	<ul class="nav nav-tabs" id="myTab">
+		<li class="active"><a data-toggle="tab" href="#home"> <i
+				class="green ace-icon fa fa-list-alt bigger-120"></i> 列表
+		</a></li>
+		@if(auth.hasPermission("user:invoice:add")){
+		<li class=""><a data-toggle="tab" href="#profile">
+		<i class="green ace-icon fa fa-plus bigger-120"></i> 添加
+		</a></li>
+		@}
+	</ul>
+
+	<div class="tab-content">
+		<div id="home" class="tab-pane active clearfix">
+			<form action="${ctxPath}/invoice/list" method="post" id="search-form" target="list-page" class="clearfix">
+				
+				<div class="pull-left width-30">
+					<label>描述：</label>
+					<input type="text" class="width-80" name="description"/>
+				</div>
+				<div class="pull-left"><span class="btn btn-info btn-sm " id="search-btn">查 询</span></div>
+			</form>
+			<hr/>
+			<div id="list-page"></div>
+			<script type="text/javascript">
+				$("#search-form").getPageList({'submitBtnId':'search-btn'})
+			</script>
+		</div>
+
+		<div id="profile" class="tab-pane">
+			<form action="${ctxPath!}/invoice/save" method="post" id="invoice-save-form">
+								<div class="center padding-10">
+			<label>会员ID：</label>
+			<input type="text" class="width-50" name="memberId" datatype="*"  nullmsg="请输入会员ID！"/>
+		</div>
+		<div class="center padding-10">
+			<label>1普通发票2增值税发票：</label>
+			<input type="text" class="width-50" name="invState" datatype="*"  nullmsg="请输入1普通发票2增值税发票！"/>
+		</div>
+		<div class="center padding-10">
+			<label>发票抬头[普通发票]：</label>
+			<input type="text" class="width-50" name="invTitle" datatype="*"  nullmsg="请输入发票抬头[普通发票]！"/>
+		</div>
+		<div class="center padding-10">
+			<label>发票内容[普通发票]：</label>
+			<input type="text" class="width-50" name="invContent" datatype="*"  nullmsg="请输入发票内容[普通发票]！"/>
+		</div>
+		<div class="center padding-10">
+			<label>单位名称：</label>
+			<input type="text" class="width-50" name="invCompany" datatype="*"  nullmsg="请输入单位名称！"/>
+		</div>
+		<div class="center padding-10">
+			<label>纳税人识别号：</label>
+			<input type="text" class="width-50" name="invCode" datatype="*"  nullmsg="请输入纳税人识别号！"/>
+		</div>
+		<div class="center padding-10">
+			<label>注册地址：</label>
+			<input type="text" class="width-50" name="invRegAddr" datatype="*"  nullmsg="请输入注册地址！"/>
+		</div>
+		<div class="center padding-10">
+			<label>注册电话：</label>
+			<input type="text" class="width-50" name="invRegPhone" datatype="*"  nullmsg="请输入注册电话！"/>
+		</div>
+		<div class="center padding-10">
+			<label>开户银行：</label>
+			<input type="text" class="width-50" name="invRegBname" datatype="*"  nullmsg="请输入开户银行！"/>
+		</div>
+		<div class="center padding-10">
+			<label>银行帐户：</label>
+			<input type="text" class="width-50" name="invRegBaccount" datatype="*"  nullmsg="请输入银行帐户！"/>
+		</div>
+		<div class="center padding-10">
+			<label>收票人姓名：</label>
+			<input type="text" class="width-50" name="invRecName" datatype="*"  nullmsg="请输入收票人姓名！"/>
+		</div>
+		<div class="center padding-10">
+			<label>收票人手机号：</label>
+			<input type="text" class="width-50" name="invRecMobphone" datatype="*"  nullmsg="请输入收票人手机号！"/>
+		</div>
+		<div class="center padding-10">
+			<label>收票人省份：</label>
+			<input type="text" class="width-50" name="invRecProvince" datatype="*"  nullmsg="请输入收票人省份！"/>
+		</div>
+		<div class="center padding-10">
+			<label>送票地址：</label>
+			<input type="text" class="width-50" name="invGotoAddr" datatype="*"  nullmsg="请输入送票地址！"/>
+		</div>
+		<div class="center padding-10">
+			<label>是否是默认的：</label>
+			<input type="text" class="width-50" name="isDefault" datatype="*"  nullmsg="请输入是否是默认的！"/>
+		</div>
+
+				<!-- <div class="center padding-10" >
+					<label style="vertical-align: top;">描述：</label>
+					<textarea type="text" class="width-50" name="description"></textarea>
+				</div> -->
+				<div class="margin-t15">
+					<span class="btn btn-info btn-block bigger-120" id="invoice-save-btn">保 存</span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+//日期框
+$('.date-picker').datepicker();
+</script>
+
+<#save isHide="yes" subBtnId="invoice-save-btn" formId="invoice-save-form" />

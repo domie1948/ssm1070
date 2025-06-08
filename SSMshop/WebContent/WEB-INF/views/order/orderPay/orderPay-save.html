@@ -1,0 +1,46 @@
+<div class="layer">
+	<form name="FormPost" id="orderPay-save" class="FormGrid"  method="post"
+		action="${ctxPath}/orderPay/save">
+		
+		<input type="hidden" value="${orderPay.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">支付单号</td>
+			<td class="DataTD width-100"><input type="text" name="paySn" datatype="*"
+			nullmsg="请输入支付单号！" value="${orderPay.paySn!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">买家ID</td>
+			<td class="DataTD width-100"><input type="text" name="buyerId" datatype="*"
+			nullmsg="请输入买家ID！" value="${orderPay.buyerId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">0默认未支付1已支付(只有第三方支付接口通知到时才会更改此状态)</td>
+			<td class="DataTD width-100"><input type="text" name="apiPayState" datatype="*"
+			nullmsg="请输入0默认未支付1已支付(只有第三方支付接口通知到时才会更改此状态)！" value="${orderPay.apiPayState!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${orderPay.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="orderPay-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

@@ -1,0 +1,276 @@
+<div class="layer">
+	<form name="FormPost" id="goods-save" class="FormGrid"  method="post"
+		action="${ctxPath}/goods/save">
+		
+		<input type="hidden" value="${goods.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">商品名称</td>
+			<td class="DataTD width-100"><input type="text" name="goodsName" datatype="*"
+			nullmsg="请输入商品名称！" value="${goods.goodsName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品副标题</td>
+			<td class="DataTD width-100"><input type="text" name="goodsSubtitle" datatype="*"
+			nullmsg="请输入商品副标题！" value="${goods.goodsSubtitle!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品分类id</td>
+			<td class="DataTD width-100"><input type="text" name="gcId" datatype="*"
+			nullmsg="请输入商品分类id！" value="${goods.gcId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品分类名称</td>
+			<td class="DataTD width-100"><input type="text" name="gcName" datatype="*"
+			nullmsg="请输入商品分类名称！" value="${goods.gcName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品品牌id</td>
+			<td class="DataTD width-100"><input type="text" name="brandId" datatype="*"
+			nullmsg="请输入商品品牌id！" value="${goods.brandId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">brandName</td>
+			<td class="DataTD width-100"><input type="text" name="brandName" datatype="*"
+			nullmsg="请输入brandName！" value="${goods.brandName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">类型id</td>
+			<td class="DataTD width-100"><input type="text" name="typeId" datatype="*"
+			nullmsg="请输入类型id！" value="${goods.typeId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">店铺id</td>
+			<td class="DataTD width-100"><input type="text" name="storeId" datatype="*"
+			nullmsg="请输入店铺id！" value="${goods.storeId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">storeName</td>
+			<td class="DataTD width-100"><input type="text" name="storeName" datatype="*"
+			nullmsg="请输入storeName！" value="${goods.storeName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品规格开启状态，1开启，0关闭</td>
+			<td class="DataTD width-100"><input type="text" name="specOpen" datatype="*"
+			nullmsg="请输入商品规格开启状态，1开启，0关闭！" value="${goods.specOpen!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品默认对应的规格id</td>
+			<td class="DataTD width-100"><input type="text" name="specId" datatype="*"
+			nullmsg="请输入商品默认对应的规格id！" value="${goods.specId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">规格名称</td>
+			<td class="DataTD width-100"><input type="text" name="specName" datatype="*"
+			nullmsg="请输入规格名称！" value="${goods.specName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品默认封面图片</td>
+			<td class="DataTD width-100"><input type="text" name="goodsImage" datatype="*"
+			nullmsg="请输入商品默认封面图片！" value="${goods.goodsImage!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品多图</td>
+			<td class="DataTD width-100"><input type="text" name="goodsImageMore" datatype="*"
+			nullmsg="请输入商品多图！" value="${goods.goodsImageMore!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品店铺价格</td>
+			<td class="DataTD width-100"><input type="text" name="goodsStorePrice" datatype="*"
+			nullmsg="请输入商品店铺价格！" value="${goods.goodsStorePrice!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品货号</td>
+			<td class="DataTD width-100"><input type="text" name="goodsSerial" datatype="*"
+			nullmsg="请输入商品货号！" value="${goods.goodsSerial!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品上架1上架0下架2定时上架</td>
+			<td class="DataTD width-100"><input type="text" name="goodsShow" datatype="*"
+			nullmsg="请输入商品上架1上架0下架2定时上架！" value="${goods.goodsShow!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品浏览数</td>
+			<td class="DataTD width-100"><input type="text" name="goodsClick" datatype="*"
+			nullmsg="请输入商品浏览数！" value="${goods.goodsClick!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品状态，0开启，1违规下架</td>
+			<td class="DataTD width-100"><input type="text" name="goodsState" datatype="*"
+			nullmsg="请输入商品状态，0开启，1违规下架！" value="${goods.goodsState!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品推荐</td>
+			<td class="DataTD width-100"><input type="text" name="goodsCommend" datatype="*"
+			nullmsg="请输入商品推荐！" value="${goods.goodsCommend!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">createTime</td>
+			<td class="DataTD width-100"><input type="text" name="createTime" datatype="*"
+			nullmsg="请输入createTime！" value="${goods.createTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品关键字</td>
+			<td class="DataTD width-100"><input type="text" name="goodsKeywords" datatype="*"
+			nullmsg="请输入商品关键字！" value="${goods.goodsKeywords!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品描述</td>
+			<td class="DataTD width-100"><input type="text" name="goodsDescription" datatype="*"
+			nullmsg="请输入商品描述！" value="${goods.goodsDescription!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品详细内容</td>
+			<td class="DataTD width-100"><input type="text" name="goodsBody" datatype="*"
+			nullmsg="请输入商品详细内容！" value="${goods.goodsBody!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品属性</td>
+			<td class="DataTD width-100"><input type="text" name="goodsAttr" datatype="*"
+			nullmsg="请输入商品属性！" value="${goods.goodsAttr!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品规格</td>
+			<td class="DataTD width-100"><input type="text" name="goodsSpec" datatype="*"
+			nullmsg="请输入商品规格！" value="${goods.goodsSpec!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">颜色自定义图片</td>
+			<td class="DataTD width-100"><input type="text" name="goodsColImg" datatype="*"
+			nullmsg="请输入颜色自定义图片！" value="${goods.goodsColImg!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">updateTime</td>
+			<td class="DataTD width-100"><input type="text" name="updateTime" datatype="*"
+			nullmsg="请输入updateTime！" value="${goods.updateTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">startTime</td>
+			<td class="DataTD width-100"><input type="text" name="startTime" datatype="*"
+			nullmsg="请输入startTime！" value="${goods.startTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">endTime</td>
+			<td class="DataTD width-100"><input type="text" name="endTime" datatype="*"
+			nullmsg="请输入endTime！" value="${goods.endTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品类型,1为全新、2为二手</td>
+			<td class="DataTD width-100"><input type="text" name="goodsForm" datatype="*"
+			nullmsg="请输入商品类型,1为全新、2为二手！" value="${goods.goodsForm!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">运费模板ID，不使用运费模板值为0</td>
+			<td class="DataTD width-100"><input type="text" name="transportId" datatype="*"
+			nullmsg="请输入运费模板ID，不使用运费模板值为0！" value="${goods.transportId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">平邮</td>
+			<td class="DataTD width-100"><input type="text" name="pyPrice" datatype="*"
+			nullmsg="请输入平邮！" value="${goods.pyPrice!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">快递</td>
+			<td class="DataTD width-100"><input type="text" name="kdPrice" datatype="*"
+			nullmsg="请输入快递！" value="${goods.kdPrice!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">EMS</td>
+			<td class="DataTD width-100"><input type="text" name="esPrice" datatype="*"
+			nullmsg="请输入EMS！" value="${goods.esPrice!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品所在地(市)</td>
+			<td class="DataTD width-100"><input type="text" name="cityId" datatype="*"
+			nullmsg="请输入商品所在地(市)！" value="${goods.cityId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">cityName</td>
+			<td class="DataTD width-100"><input type="text" name="cityName" datatype="*"
+			nullmsg="请输入cityName！" value="${goods.cityName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品所在地(省)</td>
+			<td class="DataTD width-100"><input type="text" name="provinceId" datatype="*"
+			nullmsg="请输入商品所在地(省)！" value="${goods.provinceId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">provinceName</td>
+			<td class="DataTD width-100"><input type="text" name="provinceName" datatype="*"
+			nullmsg="请输入provinceName！" value="${goods.provinceName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品违规下架原因</td>
+			<td class="DataTD width-100"><input type="text" name="goodsCloseReason" datatype="*"
+			nullmsg="请输入商品违规下架原因！" value="${goods.goodsCloseReason!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品所在店铺状态 0开启 1关闭</td>
+			<td class="DataTD width-100"><input type="text" name="goodsStoreState" datatype="*"
+			nullmsg="请输入商品所在店铺状态 0开启 1关闭！" value="${goods.goodsStoreState!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">评论次数</td>
+			<td class="DataTD width-100"><input type="text" name="commentnum" datatype="*"
+			nullmsg="请输入评论次数！" value="${goods.commentnum!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">售出数量</td>
+			<td class="DataTD width-100"><input type="text" name="salenum" datatype="*"
+			nullmsg="请输入售出数量！" value="${goods.salenum!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品收藏数量</td>
+			<td class="DataTD width-100"><input type="text" name="goodsCollect" datatype="*"
+			nullmsg="请输入商品收藏数量！" value="${goods.goodsCollect!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品运费承担方式 默认 0为买家承担 1为卖家承担</td>
+			<td class="DataTD width-100"><input type="text" name="goodsTransfeeCharge" datatype="*"
+			nullmsg="请输入商品运费承担方式 默认 0为买家承担 1为卖家承担！" value="${goods.goodsTransfeeCharge!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">店铺自定义分类id</td>
+			<td class="DataTD width-100"><input type="text" name="storeClassId" datatype="*"
+			nullmsg="请输入店铺自定义分类id！" value="${goods.storeClassId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">是否删除 0:未删除  1:已删除</td>
+			<td class="DataTD width-100"><input type="text" name="isDel" datatype="*"
+			nullmsg="请输入是否删除 0:未删除  1:已删除！" value="${goods.isDel!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">市场价</td>
+			<td class="DataTD width-100"><input type="text" name="goodsMarketPrice" datatype="*"
+			nullmsg="请输入市场价！" value="${goods.goodsMarketPrice!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">成本价</td>
+			<td class="DataTD width-100"><input type="text" name="goodsCostPrice" datatype="*"
+			nullmsg="请输入成本价！" value="${goods.goodsCostPrice!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${goods.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="goods-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

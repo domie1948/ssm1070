@@ -1,0 +1,55 @@
+<div class="layer">
+	<form name="FormPost" id="shopType-save" class="FormGrid"  method="post"
+		action="${ctxPath}/shopType/save">
+		
+		<input type="hidden" value="${shopType.id!}" name="id"/>
+		<input type="hidden" value="${pShopType.parentIds!}" name="parentIds" />
+		<input type="hidden" value="${shopType.parentIds!}" name="oldParentIds" />
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+				<tr class="FormData">
+			<td class="CaptionTD">类型名称</td>
+			<td class="DataTD width-100"><input type="text" name="name" datatype="*"
+			nullmsg="请输入类型名称！" value="${shopType.name!}"></td>
+		</tr>
+		<tr class="FormData">
+					<td class="CaptionTD">上级区域</td>
+					<td class="DataTD">
+					<#treeselect url="shopType/tree" modelNameValue="${pShopType.name!}" 
+							modelIdValue="${pShopType.id!0}" selectIds="${pShopType.id!}"
+							curId="${shopType.id!}" />
+					</td>
+				</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品类型排序</td>
+			<td class="DataTD width-100"><input type="text" name="typesort" datatype="*"
+			nullmsg="请输入商品类型排序！" value="${shopType.typesort!}"></td>
+		</tr>
+		
+		<tr class="FormData">
+			<td class="CaptionTD">层级path</td>
+			<td class="DataTD width-100"><input type="text" name="stidpath" datatype="*"
+			nullmsg="请输入层级path！" value="${shopType.stidpath!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">费用比例</td>
+			<td class="DataTD width-100"><input type="text" name="expenscale" datatype="*"
+			nullmsg="请输入费用比例！" value="${shopType.expenscale!}"></td>
+		</tr>
+		
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="shopType-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

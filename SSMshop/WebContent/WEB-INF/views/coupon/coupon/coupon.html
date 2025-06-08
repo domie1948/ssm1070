@@ -1,0 +1,141 @@
+<div class="tabbable">
+	<ul class="nav nav-tabs" id="myTab">
+		<li class="active"><a data-toggle="tab" href="#home"> <i
+				class="green ace-icon fa fa-list-alt bigger-120"></i> 列表
+		</a></li>
+		@if(auth.hasPermission("coupon:coupon:add")){
+		<li class=""><a data-toggle="tab" href="#profile">
+		<i class="green ace-icon fa fa-plus bigger-120"></i> 添加
+		</a></li>
+		@}
+	</ul>
+
+	<div class="tab-content">
+		<div id="home" class="tab-pane active clearfix">
+			<form action="${ctxPath}/coupon/list" method="post" id="search-form" target="list-page" class="clearfix">
+				
+				<div class="pull-left width-30">
+					<label>描述：</label>
+					<input type="text" class="width-80" name="description"/>
+				</div>
+				<div class="pull-left"><span class="btn btn-info btn-sm " id="search-btn">查 询</span></div>
+			</form>
+			<hr/>
+			<div id="list-page"></div>
+			<script type="text/javascript">
+				$("#search-form").getPageList({'submitBtnId':'search-btn'})
+			</script>
+		</div>
+
+		<div id="profile" class="tab-pane">
+			<form action="${ctxPath!}/coupon/save" method="post" id="coupon-save-form">
+								<div class="center padding-10">
+			<label>优惠券名称：</label>
+			<input type="text" class="width-50" name="couponTitle" datatype="*"  nullmsg="请输入优惠券名称！"/>
+		</div>
+		<div class="center padding-10">
+			<label>couponType：</label>
+			<input type="text" class="width-50" name="couponType" datatype="*"  nullmsg="请输入couponType！"/>
+		</div>
+		<div class="center padding-10">
+			<label>couponPic：</label>
+			<input type="text" class="width-50" name="couponPic" datatype="*"  nullmsg="请输入couponPic！"/>
+		</div>
+		<div class="center padding-10">
+			<label>优惠券描述：</label>
+			<input type="text" class="width-50" name="couponDesc" datatype="*"  nullmsg="请输入优惠券描述！"/>
+		</div>
+		<div class="center padding-10">
+			<label>优惠券开始日期：</label>
+			<input type="text" class="width-50" name="startTime" datatype="*"  nullmsg="请输入优惠券开始日期！"/>
+		</div>
+		<div class="center padding-10">
+			<label>优惠券截止日期：</label>
+			<input type="text" class="width-50" name="endTime" datatype="*"  nullmsg="请输入优惠券截止日期！"/>
+		</div>
+		<div class="center padding-10">
+			<label>优惠金额：</label>
+			<input type="text" class="width-50" name="couponPrice" datatype="*"  nullmsg="请输入优惠金额！"/>
+		</div>
+		<div class="center padding-10">
+			<label>金额限制：</label>
+			<input type="text" class="width-50" name="couponLimit" datatype="*"  nullmsg="请输入金额限制！"/>
+		</div>
+		<div class="center padding-10">
+			<label>店铺id：</label>
+			<input type="text" class="width-50" name="storeId" datatype="*"  nullmsg="请输入店铺id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>上架与下架状态:1下架，0上架：</label>
+			<input type="text" class="width-50" name="couponState" datatype="*"  nullmsg="请输入上架与下架状态:1下架，0上架！"/>
+		</div>
+		<div class="center padding-10">
+			<label>总共数量：</label>
+			<input type="text" class="width-50" name="couponStorage" datatype="*"  nullmsg="请输入总共数量！"/>
+		</div>
+		<div class="center padding-10">
+			<label>使用数量：</label>
+			<input type="text" class="width-50" name="couponUsage" datatype="*"  nullmsg="请输入使用数量！"/>
+		</div>
+		<div class="center padding-10">
+			<label>是否锁定：1锁定，0未锁定：</label>
+			<input type="text" class="width-50" name="couponLock" datatype="*"  nullmsg="请输入是否锁定：1锁定，0未锁定！"/>
+		</div>
+		<div class="center padding-10">
+			<label>添加日期：</label>
+			<input type="text" class="width-50" name="createTime" datatype="*"  nullmsg="请输入添加日期！"/>
+		</div>
+		<div class="center padding-10">
+			<label>分类：</label>
+			<input type="text" class="width-50" name="couponClassId" datatype="*"  nullmsg="请输入分类！"/>
+		</div>
+		<div class="center padding-10">
+			<label>点击次数：</label>
+			<input type="text" class="width-50" name="couponClick" datatype="*"  nullmsg="请输入点击次数！"/>
+		</div>
+		<div class="center padding-10">
+			<label>4STYLE STANDS FOR 4 COUPONS PER A4 PAGE, AND 8STYLE STANDS FOR 8 COUPONS PER A4 PAGE：</label>
+			<input type="text" class="width-50" name="couponPrintStyle" datatype="*"  nullmsg="请输入4STYLE STANDS FOR 4 COUPONS PER A4 PAGE, AND 8STYLE STANDS FOR 8 COUPONS PER A4 PAGE！"/>
+		</div>
+		<div class="center padding-10">
+			<label>0不推荐 1推荐到首页：</label>
+			<input type="text" class="width-50" name="couponRecommend" datatype="*"  nullmsg="请输入0不推荐 1推荐到首页！"/>
+		</div>
+		<div class="center padding-10">
+			<label>审核状态 0为待审核 1已通过 2未通过：</label>
+			<input type="text" class="width-50" name="couponAllowstate" datatype="*"  nullmsg="请输入审核状态 0为待审核 1已通过 2未通过！"/>
+		</div>
+		<div class="center padding-10">
+			<label>审核备注：</label>
+			<input type="text" class="width-50" name="couponAllowremark" datatype="*"  nullmsg="请输入审核备注！"/>
+		</div>
+		<div class="center padding-10">
+			<label>店铺名称：</label>
+			<input type="text" class="width-50" name="storeName" datatype="*"  nullmsg="请输入店铺名称！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品分类id：</label>
+			<input type="text" class="width-50" name="couponGoodsId" datatype="*"  nullmsg="请输入商品分类id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品分类id：</label>
+			<input type="text" class="width-50" name="couponGoodsClass_id" datatype="*"  nullmsg="请输入商品分类id！"/>
+		</div>
+
+				<!-- <div class="center padding-10" >
+					<label style="vertical-align: top;">描述：</label>
+					<textarea type="text" class="width-50" name="description"></textarea>
+				</div> -->
+				<div class="margin-t15">
+					<span class="btn btn-info btn-block bigger-120" id="coupon-save-btn">保 存</span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+//日期框
+$('.date-picker').datepicker();
+</script>
+
+<#save isHide="yes" subBtnId="coupon-save-btn" formId="coupon-save-form" />

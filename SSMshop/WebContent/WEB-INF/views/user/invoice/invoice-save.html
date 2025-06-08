@@ -1,0 +1,106 @@
+<div class="layer">
+	<form name="FormPost" id="invoice-save" class="FormGrid"  method="post"
+		action="${ctxPath}/invoice/save">
+		
+		<input type="hidden" value="${invoice.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">会员ID</td>
+			<td class="DataTD width-100"><input type="text" name="memberId" datatype="*"
+			nullmsg="请输入会员ID！" value="${invoice.memberId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">1普通发票2增值税发票</td>
+			<td class="DataTD width-100"><input type="text" name="invState" datatype="*"
+			nullmsg="请输入1普通发票2增值税发票！" value="${invoice.invState!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">发票抬头[普通发票]</td>
+			<td class="DataTD width-100"><input type="text" name="invTitle" datatype="*"
+			nullmsg="请输入发票抬头[普通发票]！" value="${invoice.invTitle!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">发票内容[普通发票]</td>
+			<td class="DataTD width-100"><input type="text" name="invContent" datatype="*"
+			nullmsg="请输入发票内容[普通发票]！" value="${invoice.invContent!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">单位名称</td>
+			<td class="DataTD width-100"><input type="text" name="invCompany" datatype="*"
+			nullmsg="请输入单位名称！" value="${invoice.invCompany!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">纳税人识别号</td>
+			<td class="DataTD width-100"><input type="text" name="invCode" datatype="*"
+			nullmsg="请输入纳税人识别号！" value="${invoice.invCode!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">注册地址</td>
+			<td class="DataTD width-100"><input type="text" name="invRegAddr" datatype="*"
+			nullmsg="请输入注册地址！" value="${invoice.invRegAddr!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">注册电话</td>
+			<td class="DataTD width-100"><input type="text" name="invRegPhone" datatype="*"
+			nullmsg="请输入注册电话！" value="${invoice.invRegPhone!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">开户银行</td>
+			<td class="DataTD width-100"><input type="text" name="invRegBname" datatype="*"
+			nullmsg="请输入开户银行！" value="${invoice.invRegBname!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">银行帐户</td>
+			<td class="DataTD width-100"><input type="text" name="invRegBaccount" datatype="*"
+			nullmsg="请输入银行帐户！" value="${invoice.invRegBaccount!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">收票人姓名</td>
+			<td class="DataTD width-100"><input type="text" name="invRecName" datatype="*"
+			nullmsg="请输入收票人姓名！" value="${invoice.invRecName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">收票人手机号</td>
+			<td class="DataTD width-100"><input type="text" name="invRecMobphone" datatype="*"
+			nullmsg="请输入收票人手机号！" value="${invoice.invRecMobphone!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">收票人省份</td>
+			<td class="DataTD width-100"><input type="text" name="invRecProvince" datatype="*"
+			nullmsg="请输入收票人省份！" value="${invoice.invRecProvince!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">送票地址</td>
+			<td class="DataTD width-100"><input type="text" name="invGotoAddr" datatype="*"
+			nullmsg="请输入送票地址！" value="${invoice.invGotoAddr!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">是否是默认的</td>
+			<td class="DataTD width-100"><input type="text" name="isDefault" datatype="*"
+			nullmsg="请输入是否是默认的！" value="${invoice.isDefault!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${invoice.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="invoice-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

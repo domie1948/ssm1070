@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zsCat.web.base.mapper.ArticleMapper">
+
+	<sql id="baseArticleColumns">
+		id,ac_id,article_url,article_show,article_sort,article_title,article_content,is_del,create_time,update_time,article_time
+	</sql>
+
+</mapper>

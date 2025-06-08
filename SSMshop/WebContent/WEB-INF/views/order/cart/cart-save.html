@@ -1,0 +1,86 @@
+<div class="layer">
+	<form name="FormPost" id="cart-save" class="FormGrid"  method="post"
+		action="${ctxPath}/cart/save">
+		
+		<input type="hidden" value="${cart.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">会员id</td>
+			<td class="DataTD width-100"><input type="text" name="memberId" datatype="*"
+			nullmsg="请输入会员id！" value="${cart.memberId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">店铺id</td>
+			<td class="DataTD width-100"><input type="text" name="storeId" datatype="*"
+			nullmsg="请输入店铺id！" value="${cart.storeId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">店铺名称</td>
+			<td class="DataTD width-100"><input type="text" name="storeName" datatype="*"
+			nullmsg="请输入店铺名称！" value="${cart.storeName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品id</td>
+			<td class="DataTD width-100"><input type="text" name="goodsId" datatype="*"
+			nullmsg="请输入商品id！" value="${cart.goodsId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品名称</td>
+			<td class="DataTD width-100"><input type="text" name="goodsName" datatype="*"
+			nullmsg="请输入商品名称！" value="${cart.goodsName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">规格id</td>
+			<td class="DataTD width-100"><input type="text" name="specId" datatype="*"
+			nullmsg="请输入规格id！" value="${cart.specId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">规格内容</td>
+			<td class="DataTD width-100"><input type="text" name="specInfo" datatype="*"
+			nullmsg="请输入规格内容！" value="${cart.specInfo!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品价格</td>
+			<td class="DataTD width-100"><input type="text" name="goodsStorePrice" datatype="*"
+			nullmsg="请输入商品价格！" value="${cart.goodsStorePrice!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">购买商品数量</td>
+			<td class="DataTD width-100"><input type="text" name="goodsNum" datatype="*"
+			nullmsg="请输入购买商品数量！" value="${cart.goodsNum!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品图片</td>
+			<td class="DataTD width-100"><input type="text" name="goodsImages" datatype="*"
+			nullmsg="请输入商品图片！" value="${cart.goodsImages!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品所在一级分类的id</td>
+			<td class="DataTD width-100"><input type="text" name="firstGcId" datatype="*"
+			nullmsg="请输入商品所在一级分类的id！" value="${cart.firstGcId!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${cart.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="cart-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

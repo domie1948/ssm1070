@@ -1,0 +1,111 @@
+<div class="layer">
+	<form name="FormPost" id="orderInvoice-save" class="FormGrid"  method="post"
+		action="${ctxPath}/orderInvoice/save">
+		
+		<input type="hidden" value="${orderInvoice.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">会员ID</td>
+			<td class="DataTD width-100"><input type="text" name="memberId" datatype="*"
+			nullmsg="请输入会员ID！" value="${orderInvoice.memberId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">订单ID</td>
+			<td class="DataTD width-100"><input type="text" name="orderId" datatype="*"
+			nullmsg="请输入订单ID！" value="${orderInvoice.orderId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">1普通发票2增值税发票</td>
+			<td class="DataTD width-100"><input type="text" name="invState" datatype="*"
+			nullmsg="请输入1普通发票2增值税发票！" value="${orderInvoice.invState!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">发票抬头[普通发票]</td>
+			<td class="DataTD width-100"><input type="text" name="invTitle" datatype="*"
+			nullmsg="请输入发票抬头[普通发票]！" value="${orderInvoice.invTitle!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">发票内容[普通发票]</td>
+			<td class="DataTD width-100"><input type="text" name="invContent" datatype="*"
+			nullmsg="请输入发票内容[普通发票]！" value="${orderInvoice.invContent!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">单位名称</td>
+			<td class="DataTD width-100"><input type="text" name="invCompany" datatype="*"
+			nullmsg="请输入单位名称！" value="${orderInvoice.invCompany!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">纳税人识别号</td>
+			<td class="DataTD width-100"><input type="text" name="invCode" datatype="*"
+			nullmsg="请输入纳税人识别号！" value="${orderInvoice.invCode!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">注册地址</td>
+			<td class="DataTD width-100"><input type="text" name="invRegAddr" datatype="*"
+			nullmsg="请输入注册地址！" value="${orderInvoice.invRegAddr!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">注册电话</td>
+			<td class="DataTD width-100"><input type="text" name="invRegPhone" datatype="*"
+			nullmsg="请输入注册电话！" value="${orderInvoice.invRegPhone!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">开户银行</td>
+			<td class="DataTD width-100"><input type="text" name="invRegBname" datatype="*"
+			nullmsg="请输入开户银行！" value="${orderInvoice.invRegBname!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">银行帐户</td>
+			<td class="DataTD width-100"><input type="text" name="invRegBaccount" datatype="*"
+			nullmsg="请输入银行帐户！" value="${orderInvoice.invRegBaccount!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">收票人姓名</td>
+			<td class="DataTD width-100"><input type="text" name="invRecName" datatype="*"
+			nullmsg="请输入收票人姓名！" value="${orderInvoice.invRecName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">收票人手机号</td>
+			<td class="DataTD width-100"><input type="text" name="invRecMobphone" datatype="*"
+			nullmsg="请输入收票人手机号！" value="${orderInvoice.invRecMobphone!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">收票人省份</td>
+			<td class="DataTD width-100"><input type="text" name="invRecProvince" datatype="*"
+			nullmsg="请输入收票人省份！" value="${orderInvoice.invRecProvince!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">送票地址</td>
+			<td class="DataTD width-100"><input type="text" name="invGotoAddr" datatype="*"
+			nullmsg="请输入送票地址！" value="${orderInvoice.invGotoAddr!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">是否是默认的</td>
+			<td class="DataTD width-100"><input type="text" name="isDefault" datatype="*"
+			nullmsg="请输入是否是默认的！" value="${orderInvoice.isDefault!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${orderInvoice.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="orderInvoice-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zsCat.web.user.mapper.MemberMapper">
+
+	<sql id="userMemberColumns">
+		id,member_name,member_truename,member_avatar,member_sex,member_birthday,member_passwd,member_email,member_qq,member_ww,member_login_num,create_time,member_login_time,member_old_login_time,member_login_ip,member_old_login_ip,member_openid,member_info,member_consume_points,member_rank_points,available_predeposit,freeze_predeposit,inform_allow,is_buy,is_allowtalk,member_state,member_credit,member_snsvisitnum,member_areaid,member_cityid,member_provinceid,member_areainfo,member_privacy,is_del,sign_code,sign_code_state,member_mobile,member_gradeid,member_type
+	</sql>
+
+</mapper>

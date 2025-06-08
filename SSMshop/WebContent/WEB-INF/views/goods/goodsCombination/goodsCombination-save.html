@@ -1,0 +1,41 @@
+<div class="layer">
+	<form name="FormPost" id="goodsCombination-save" class="FormGrid"  method="post"
+		action="${ctxPath}/goodsCombination/save">
+		
+		<input type="hidden" value="${goodsCombination.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">商品id</td>
+			<td class="DataTD width-100"><input type="text" name="goodsId" datatype="*"
+			nullmsg="请输入商品id！" value="${goodsCombination.goodsId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">被组合商品的id</td>
+			<td class="DataTD width-100"><input type="text" name="combinationGoodsId" datatype="*"
+			nullmsg="请输入被组合商品的id！" value="${goodsCombination.combinationGoodsId!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${goodsCombination.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="goodsCombination-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zsCat.web.coupon.mapper.CouponMapper">
+
+	<sql id="couponCouponColumns">
+		id,coupon_title,coupon_type,coupon_pic,coupon_desc,start_time,end_time,coupon_price,coupon_limit,store_id,coupon_state,coupon_storage,coupon_usage,coupon_lock,create_time,coupon_class_id,coupon_click,coupon_print_style,coupon_recommend,coupon_allowstate,coupon_allowremark,store_name,coupon_goods_id,coupon_goods_class_id
+	</sql>
+
+</mapper>

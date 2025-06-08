@@ -1,0 +1,104 @@
+package com.zsCat.web.[model].controller;
+
+
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.alibaba.fastjson.JSON;
+import com.github.pagehelper.PageInfo;
+import com.zsCat.web.[model].model.[entityClass];
+import com.zsCat.web.[model].service.[entityClass]Service;
+	/**
+	 * 
+	 * @author zs 2016-5-24 21:52:07
+	 * @Email: 951449465@qq.com
+	 * @version 4.0v
+	 *	我的[model]
+	 */
+@Controller
+@RequestMapping("[lowerentity]")
+public class [entityClass]Controller {
+
+	@Resource
+	private [entityClass]Service [entityClass]Service;
+	
+	@RequestMapping
+	public String to[entityClass](Model model) {
+		model.addAttribute("treeList", JSON.toJSONString([entityClass]Service.select(null)));
+		return "[model]/[lowerentity]/[lowerentity]";
+	}
+
+	/**
+	 * 区域树
+	 * @return
+	 */
+	@RequestMapping(value = "tree", method = RequestMethod.POST)
+	public @ResponseBody List<[entityClass]> get[entityClass]TreeList() {
+		List<[entityClass]> list = [entityClass]Service.select(null);
+		return list;
+	}
+	
+	/**
+	 * 添加或更新区域
+	 * @param params
+	 * @return
+	 */
+	@RequestMapping(value = "save", method = RequestMethod.POST)
+	public @ResponseBody Integer save(@ModelAttribute [entityClass] [entityClass],HttpServletRequest request) {
+		[entityClass].setParentIds([entityClass].getParentIds()+[entityClass].getParentId()+","); 
+		return [entityClass]Service.save[entityClass]([entityClass]);
+	}
+	
+	/**
+	 * 删除字典
+	* @param id
+	* @return
+	 */
+	@RequestMapping(value="delete",method=RequestMethod.POST)
+	public @ResponseBody Integer del(@ModelAttribute [entityClass] [entityClass]){
+		return [entityClass]Service.delete[entityClass]([entityClass]);
+	}
+	
+	/**
+	 * 分页显示字典table
+	 * @param params
+	 * @return
+	 */
+	@RequestMapping(value = "list", method = RequestMethod.POST)
+	public String list(int pageNum,int pageSize,@ModelAttribute [entityClass] [entityClass], Model model) {
+		PageInfo<[entityClass]> page = [entityClass]Service.selectPage(pageNum, pageSize, [entityClass]);
+		model.addAttribute("page", page);
+		return "[model]/[lowerentity]/[lowerentity]-list";
+	}
+	
+
+	@RequestMapping(value = "{mode}/showlayer", method = RequestMethod.POST)
+	public String showLayer(Long id, Long parentId,
+			@PathVariable("mode") String mode, Model model) {
+		[entityClass] [lowerentity] = null, p[entityClass] = null;
+		if (StringUtils.equalsIgnoreCase(mode, "add")) {
+			p[entityClass] = [entityClass]Service.selectByPrimaryKey(parentId);
+		} else if (StringUtils.equalsIgnoreCase(mode, "edit")) {
+			[lowerentity] = [entityClass]Service.selectByPrimaryKey(id);
+			p[entityClass] = [entityClass]Service.selectByPrimaryKey(parentId);
+		} else if (StringUtils.equalsIgnoreCase(mode, "detail")) {
+			[lowerentity] = [entityClass]Service.selectByPrimaryKey(id);
+			p[entityClass] = [entityClass]Service.selectByPrimaryKey([lowerentity].getParentId());
+		}
+		model.addAttribute("p[entityClass]", p[entityClass]).addAttribute("[lowerentity]", [lowerentity]);
+		return mode.equals("detail") ? "[model]/[lowerentity]/[lowerentity]-detail"
+				: "[model]/[lowerentity]/[lowerentity]-save";
+	}
+	
+}

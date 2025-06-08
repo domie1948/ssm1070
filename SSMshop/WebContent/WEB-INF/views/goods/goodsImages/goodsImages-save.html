@@ -1,0 +1,66 @@
+<div class="layer">
+	<form name="FormPost" id="goodsImages-save" class="FormGrid"  method="post"
+		action="${ctxPath}/goodsImages/save">
+		
+		<input type="hidden" value="${goodsImages.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">商品图片id</td>
+			<td class="DataTD width-100"><input type="text" name="goodsImageId" datatype="*"
+			nullmsg="请输入商品图片id！" value="${goodsImages.goodsImageId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品公共内容id</td>
+			<td class="DataTD width-100"><input type="text" name="goodsCommonid" datatype="*"
+			nullmsg="请输入商品公共内容id！" value="${goodsImages.goodsCommonid!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">店铺id</td>
+			<td class="DataTD width-100"><input type="text" name="storeId" datatype="*"
+			nullmsg="请输入店铺id！" value="${goodsImages.storeId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">颜色规格值id</td>
+			<td class="DataTD width-100"><input type="text" name="colorId" datatype="*"
+			nullmsg="请输入颜色规格值id！" value="${goodsImages.colorId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品图片</td>
+			<td class="DataTD width-100"><input type="text" name="goodsImage" datatype="*"
+			nullmsg="请输入商品图片！" value="${goodsImages.goodsImage!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">排序</td>
+			<td class="DataTD width-100"><input type="text" name="goodsImageSort" datatype="*"
+			nullmsg="请输入排序！" value="${goodsImages.goodsImageSort!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">默认主题，1是，0否</td>
+			<td class="DataTD width-100"><input type="text" name="isDefault" datatype="*"
+			nullmsg="请输入默认主题，1是，0否！" value="${goodsImages.isDefault!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${goodsImages.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="goodsImages-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

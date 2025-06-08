@@ -1,0 +1,74 @@
+<table class="table table-striped table-bordered table-hover nomargin-bottom">
+	<thead>
+		<tr>
+								<th class="center">会员ID</th>
+			<th class="center">订单ID</th>
+			<th class="center">1普通发票2增值税发票</th>
+			<th class="center">发票抬头[普通发票]</th>
+			<th class="center">发票内容[普通发票]</th>
+			<th class="center">单位名称</th>
+			<th class="center">纳税人识别号</th>
+			<th class="center">注册地址</th>
+			<th class="center">注册电话</th>
+			<th class="center">开户银行</th>
+			<th class="center">银行帐户</th>
+			<th class="center">收票人姓名</th>
+			<th class="center">收票人手机号</th>
+			<th class="center">收票人省份</th>
+			<th class="center">送票地址</th>
+			<th class="center">是否是默认的</th>
+
+			<th class="center">操作</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@for(item in page.list){
+			<tr>
+								<td class="center">${item.memberId!}</td>
+			<td class="center">${item.orderId!}</td>
+			<td class="center">${item.invState!}</td>
+			<td class="center">${item.invTitle!}</td>
+			<td class="center">${item.invContent!}</td>
+			<td class="center">${item.invCompany!}</td>
+			<td class="center">${item.invCode!}</td>
+			<td class="center">${item.invRegAddr!}</td>
+			<td class="center">${item.invRegPhone!}</td>
+			<td class="center">${item.invRegBname!}</td>
+			<td class="center">${item.invRegBaccount!}</td>
+			<td class="center">${item.invRecName!}</td>
+			<td class="center">${item.invRecMobphone!}</td>
+			<td class="center">${item.invRecProvince!}</td>
+			<td class="center">${item.invGotoAddr!}</td>
+			<td class="center">${item.isDefault!}</td>
+
+				<td class="center">
+					<div class="hidden-sm hidden-xs action-buttons">
+					@if(auth.hasPermission("order:orderInvoice:edit")){
+						<a class="green" href="javascript:void(0);" 
+							data-mode="page" data-title="编辑"
+							data-url="${ctxPath}/orderInvoice/edit/showlayer"
+							data-data="{id:'${item.id}'}" 
+						>
+							<i class="ace-icon fa fa-pencil bigger-130"></i>
+						</a>
+					@}
+					
+					@if(auth.hasPermission("order:orderInvoice:delete")){
+						<a class="red" href="javascript:void(0);" 
+							data-mode="del" data-title="删除操作"
+							data-msg="你确定删除此数据吗?"
+							data-url="${ctxPath}/orderInvoice/delete" 
+							data-data="{id:'${item.id}',type:'${item.type}',value:'${item.value}'}"
+						>
+							<i class="ace-icon fa fa-trash-o bigger-130"></i>
+						</a>
+					@}
+					</div>
+				</td>
+			</tr>
+		@}
+	</tbody>
+</table>
+<div class="space-8"></div>
+<#paginate page="${page}" />

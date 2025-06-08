@@ -1,0 +1,86 @@
+<div class="layer">
+	<form name="FormPost" id="brand-save" class="FormGrid"  method="post"
+		action="${ctxPath}/brand/save">
+		
+		<input type="hidden" value="${brand.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">品牌名称</td>
+			<td class="DataTD width-100"><input type="text" name="brandName" datatype="*"
+			nullmsg="请输入品牌名称！" value="${brand.brandName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">类别名称</td>
+			<td class="DataTD width-100"><input type="text" name="brandClass" datatype="*"
+			nullmsg="请输入类别名称！" value="${brand.brandClass!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">图片</td>
+			<td class="DataTD width-100"><input type="text" name="brandPic" datatype="*"
+			nullmsg="请输入图片！" value="${brand.brandPic!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">排序</td>
+			<td class="DataTD width-100"><input type="text" name="brandSort" datatype="*"
+			nullmsg="请输入排序！" value="${brand.brandSort!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">推荐，0为否，1为是，默认为0</td>
+			<td class="DataTD width-100"><input type="text" name="brandRecommend" datatype="*"
+			nullmsg="请输入推荐，0为否，1为是，默认为0！" value="${brand.brandRecommend!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">店铺ID</td>
+			<td class="DataTD width-100"><input type="text" name="storeId" datatype="*"
+			nullmsg="请输入店铺ID！" value="${brand.storeId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">品牌申请，0为申请中，1为通过，默认为1，申请功能是会员使用，系统后台默认为1</td>
+			<td class="DataTD width-100"><input type="text" name="brandApply" datatype="*"
+			nullmsg="请输入品牌申请，0为申请中，1为通过，默认为1，申请功能是会员使用，系统后台默认为1！" value="${brand.brandApply!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">所属分类id</td>
+			<td class="DataTD width-100"><input type="text" name="classId" datatype="*"
+			nullmsg="请输入所属分类id！" value="${brand.classId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">是否删除0:未删除;1:已删除</td>
+			<td class="DataTD width-100"><input type="text" name="isDel" datatype="*"
+			nullmsg="请输入是否删除0:未删除;1:已删除！" value="${brand.isDel!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">创建时间</td>
+			<td class="DataTD width-100"><input type="text" name="createTime" datatype="*"
+			nullmsg="请输入创建时间！" value="${brand.createTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">修改时间</td>
+			<td class="DataTD width-100"><input type="text" name="updateTime" datatype="*"
+			nullmsg="请输入修改时间！" value="${brand.updateTime!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${brand.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="brand-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

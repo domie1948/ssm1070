@@ -1,0 +1,213 @@
+<div class="tabbable">
+	<ul class="nav nav-tabs" id="myTab">
+		<li class="active"><a data-toggle="tab" href="#home"> <i
+				class="green ace-icon fa fa-list-alt bigger-120"></i> 列表
+		</a></li>
+		@if(auth.hasPermission("goods:goodsCommon:add")){
+		<li class=""><a data-toggle="tab" href="#profile">
+		<i class="green ace-icon fa fa-plus bigger-120"></i> 添加
+		</a></li>
+		@}
+	</ul>
+
+	<div class="tab-content">
+		<div id="home" class="tab-pane active clearfix">
+			<form action="${ctxPath}/goodsCommon/list" method="post" id="search-form" target="list-page" class="clearfix">
+				
+				<div class="pull-left width-30">
+					<label>描述：</label>
+					<input type="text" class="width-80" name="description"/>
+				</div>
+				<div class="pull-left"><span class="btn btn-info btn-sm " id="search-btn">查 询</span></div>
+			</form>
+			<hr/>
+			<div id="list-page"></div>
+			<script type="text/javascript">
+				$("#search-form").getPageList({'submitBtnId':'search-btn'})
+			</script>
+		</div>
+
+		<div id="profile" class="tab-pane">
+			<form action="${ctxPath!}/goodsCommon/save" method="post" id="goodsCommon-save-form">
+								<div class="center padding-10">
+			<label>商品公共表id：</label>
+			<input type="text" class="width-50" name="goodsCommonid" datatype="*"  nullmsg="请输入商品公共表id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品名称：</label>
+			<input type="text" class="width-50" name="goodsName" datatype="*"  nullmsg="请输入商品名称！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品广告词：</label>
+			<input type="text" class="width-50" name="goodsJingle" datatype="*"  nullmsg="请输入商品广告词！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品分类：</label>
+			<input type="text" class="width-50" name="gcId" datatype="*"  nullmsg="请输入商品分类！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品分类：</label>
+			<input type="text" class="width-50" name="gcName" datatype="*"  nullmsg="请输入商品分类！"/>
+		</div>
+		<div class="center padding-10">
+			<label>店铺id：</label>
+			<input type="text" class="width-50" name="storeId" datatype="*"  nullmsg="请输入店铺id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>店铺名称：</label>
+			<input type="text" class="width-50" name="storeName" datatype="*"  nullmsg="请输入店铺名称！"/>
+		</div>
+		<div class="center padding-10">
+			<label>规格名称：</label>
+			<input type="text" class="width-50" name="specName" datatype="*"  nullmsg="请输入规格名称！"/>
+		</div>
+		<div class="center padding-10">
+			<label>规格值：</label>
+			<input type="text" class="width-50" name="specValue" datatype="*"  nullmsg="请输入规格值！"/>
+		</div>
+		<div class="center padding-10">
+			<label>品牌id：</label>
+			<input type="text" class="width-50" name="brandId" datatype="*"  nullmsg="请输入品牌id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>品牌名称：</label>
+			<input type="text" class="width-50" name="brandName" datatype="*"  nullmsg="请输入品牌名称！"/>
+		</div>
+		<div class="center padding-10">
+			<label>类型id：</label>
+			<input type="text" class="width-50" name="typeId" datatype="*"  nullmsg="请输入类型id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品主图：</label>
+			<input type="text" class="width-50" name="goodsImage" datatype="*"  nullmsg="请输入商品主图！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品属性：</label>
+			<input type="text" class="width-50" name="goodsAttr" datatype="*"  nullmsg="请输入商品属性！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品内容：</label>
+			<input type="text" class="width-50" name="goodsBody" datatype="*"  nullmsg="请输入商品内容！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品状态 0下架，1正常，10违规（禁售）：</label>
+			<input type="text" class="width-50" name="goodsState" datatype="*"  nullmsg="请输入商品状态 0下架，1正常，10违规（禁售）！"/>
+		</div>
+		<div class="center padding-10">
+			<label>违规原因：</label>
+			<input type="text" class="width-50" name="goodsStateremark" datatype="*"  nullmsg="请输入违规原因！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品审核 1通过，0未通过，10审核中：</label>
+			<input type="text" class="width-50" name="goodsVerify" datatype="*"  nullmsg="请输入商品审核 1通过，0未通过，10审核中！"/>
+		</div>
+		<div class="center padding-10">
+			<label>审核失败原因：</label>
+			<input type="text" class="width-50" name="goodsVerifyremark" datatype="*"  nullmsg="请输入审核失败原因！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品锁定 0未锁，1已锁：</label>
+			<input type="text" class="width-50" name="goodsLock" datatype="*"  nullmsg="请输入商品锁定 0未锁，1已锁！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品添加时间：</label>
+			<input type="text" class="width-50" name="goodsAddtime" datatype="*"  nullmsg="请输入商品添加时间！"/>
+		</div>
+		<div class="center padding-10">
+			<label>上架时间：</label>
+			<input type="text" class="width-50" name="goodsSelltime" datatype="*"  nullmsg="请输入上架时间！"/>
+		</div>
+		<div class="center padding-10">
+			<label>规格名称序列化（下标为规格id）：</label>
+			<input type="text" class="width-50" name="goodsSpecname" datatype="*"  nullmsg="请输入规格名称序列化（下标为规格id）！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品价格：</label>
+			<input type="text" class="width-50" name="goodsPrice" datatype="*"  nullmsg="请输入商品价格！"/>
+		</div>
+		<div class="center padding-10">
+			<label>市场价：</label>
+			<input type="text" class="width-50" name="goodsMarketprice" datatype="*"  nullmsg="请输入市场价！"/>
+		</div>
+		<div class="center padding-10">
+			<label>成本价：</label>
+			<input type="text" class="width-50" name="goodsCostprice" datatype="*"  nullmsg="请输入成本价！"/>
+		</div>
+		<div class="center padding-10">
+			<label>折扣：</label>
+			<input type="text" class="width-50" name="goodsDiscount" datatype="*"  nullmsg="请输入折扣！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商家编号：</label>
+			<input type="text" class="width-50" name="goodsSerial" datatype="*"  nullmsg="请输入商家编号！"/>
+		</div>
+		<div class="center padding-10">
+			<label>运费模板：</label>
+			<input type="text" class="width-50" name="transportId" datatype="*"  nullmsg="请输入运费模板！"/>
+		</div>
+		<div class="center padding-10">
+			<label>运费模板名称：</label>
+			<input type="text" class="width-50" name="transportTitle" datatype="*"  nullmsg="请输入运费模板名称！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品推荐 1是，0否，默认为0：</label>
+			<input type="text" class="width-50" name="goodsCommend" datatype="*"  nullmsg="请输入商品推荐 1是，0否，默认为0！"/>
+		</div>
+		<div class="center padding-10">
+			<label>运费 0为免运费：</label>
+			<input type="text" class="width-50" name="goodsFreight" datatype="*"  nullmsg="请输入运费 0为免运费！"/>
+		</div>
+		<div class="center padding-10">
+			<label>是否开具增值税发票 1是，0否：</label>
+			<input type="text" class="width-50" name="goodsVat" datatype="*"  nullmsg="请输入是否开具增值税发票 1是，0否！"/>
+		</div>
+		<div class="center padding-10">
+			<label>一级地区id：</label>
+			<input type="text" class="width-50" name="areaid1" datatype="*"  nullmsg="请输入一级地区id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>二级地区id：</label>
+			<input type="text" class="width-50" name="areaid2" datatype="*"  nullmsg="请输入二级地区id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>店铺分类id 首尾用,隔开：</label>
+			<input type="text" class="width-50" name="goodsStcids" datatype="*"  nullmsg="请输入店铺分类id 首尾用,隔开！"/>
+		</div>
+		<div class="center padding-10">
+			<label>顶部关联板式：</label>
+			<input type="text" class="width-50" name="plateidTop" datatype="*"  nullmsg="请输入顶部关联板式！"/>
+		</div>
+		<div class="center padding-10">
+			<label>底部关联板式：</label>
+			<input type="text" class="width-50" name="plateidBottom" datatype="*"  nullmsg="请输入底部关联板式！"/>
+		</div>
+		<div class="center padding-10">
+			<label>是否删除0:未删除;1:已删除：</label>
+			<input type="text" class="width-50" name="isDel" datatype="*"  nullmsg="请输入是否删除0:未删除;1:已删除！"/>
+		</div>
+		<div class="center padding-10">
+			<label>创建时间：</label>
+			<input type="text" class="width-50" name="createTime" datatype="*"  nullmsg="请输入创建时间！"/>
+		</div>
+		<div class="center padding-10">
+			<label>修改时间：</label>
+			<input type="text" class="width-50" name="updateTime" datatype="*"  nullmsg="请输入修改时间！"/>
+		</div>
+
+				<!-- <div class="center padding-10" >
+					<label style="vertical-align: top;">描述：</label>
+					<textarea type="text" class="width-50" name="description"></textarea>
+				</div> -->
+				<div class="margin-t15">
+					<span class="btn btn-info btn-block bigger-120" id="goodsCommon-save-btn">保 存</span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+//日期框
+$('.date-picker').datepicker();
+</script>
+
+<#save isHide="yes" subBtnId="goodsCommon-save-btn" formId="goodsCommon-save-form" />

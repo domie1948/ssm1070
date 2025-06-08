@@ -1,0 +1,106 @@
+<div class="layer">
+	<form name="FormPost" id="orderDaddress-save" class="FormGrid"  method="post"
+		action="${ctxPath}/orderDaddress/save">
+		
+		<input type="hidden" value="${orderDaddress.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">地址ID</td>
+			<td class="DataTD width-100"><input type="text" name="addressId" datatype="*"
+			nullmsg="请输入地址ID！" value="${orderDaddress.addressId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">店铺ID</td>
+			<td class="DataTD width-100"><input type="text" name="storeId" datatype="*"
+			nullmsg="请输入店铺ID！" value="${orderDaddress.storeId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">联系人</td>
+			<td class="DataTD width-100"><input type="text" name="sellerName" datatype="*"
+			nullmsg="请输入联系人！" value="${orderDaddress.sellerName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">地区ID</td>
+			<td class="DataTD width-100"><input type="text" name="areaId" datatype="*"
+			nullmsg="请输入地区ID！" value="${orderDaddress.areaId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">市级ID</td>
+			<td class="DataTD width-100"><input type="text" name="cityId" datatype="*"
+			nullmsg="请输入市级ID！" value="${orderDaddress.cityId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">地区内容</td>
+			<td class="DataTD width-100"><input type="text" name="areaInfo" datatype="*"
+			nullmsg="请输入地区内容！" value="${orderDaddress.areaInfo!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">地址</td>
+			<td class="DataTD width-100"><input type="text" name="address" datatype="*"
+			nullmsg="请输入地址！" value="${orderDaddress.address!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">邮编</td>
+			<td class="DataTD width-100"><input type="text" name="zipCode" datatype="*"
+			nullmsg="请输入邮编！" value="${orderDaddress.zipCode!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">座机电话</td>
+			<td class="DataTD width-100"><input type="text" name="telPhone" datatype="*"
+			nullmsg="请输入座机电话！" value="${orderDaddress.telPhone!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">手机电话</td>
+			<td class="DataTD width-100"><input type="text" name="mobPhone" datatype="*"
+			nullmsg="请输入手机电话！" value="${orderDaddress.mobPhone!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">公司</td>
+			<td class="DataTD width-100"><input type="text" name="company" datatype="*"
+			nullmsg="请输入公司！" value="${orderDaddress.company!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">备注</td>
+			<td class="DataTD width-100"><input type="text" name="content" datatype="*"
+			nullmsg="请输入备注！" value="${orderDaddress.content!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">是否默认1是</td>
+			<td class="DataTD width-100"><input type="text" name="isDefault" datatype="*"
+			nullmsg="请输入是否默认1是！" value="${orderDaddress.isDefault!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">省级id</td>
+			<td class="DataTD width-100"><input type="text" name="provinceId" datatype="*"
+			nullmsg="请输入省级id！" value="${orderDaddress.provinceId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">订单id</td>
+			<td class="DataTD width-100"><input type="text" name="orderId" datatype="*"
+			nullmsg="请输入订单id！" value="${orderDaddress.orderId!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${orderDaddress.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="orderDaddress-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

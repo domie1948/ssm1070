@@ -1,0 +1,20 @@
+<tr class="FormData">
+	<td class="CaptionTD">名称</td>
+	<td class="DataTD width-100"><input type="text" name="name"
+		datatype="*" nullmsg="请输入名称！" value="\${testTree.name!\}"></td>
+</tr>
+<tr class="FormData">
+	<td class="CaptionTD">上级栏目</td>
+	<td class="DataTD">
+					<#treeselect url="parentId/tree"
+						modelNameValue="${pTestTree.name!}" modelIdValue="${pTestTree.id!1}"
+						selectIds="${pTestTree.id!}" curId="${parentId.id!}" /></td>
+</tr>
+
+<tr class="FormData">
+					<td class="CaptionTD">上级栏目</td>
+					<td class="DataTD">
+					<#treeselect url="cmsCategory/tree"
+					 modelNameValue="${pCmsCategory.name!}"  modelIdValue="${pCmsCategory.id!1}" 
+					 selectIds="${pCmsCategory.id!}" curId="${cmsCategory.id!}" /></td>
+		</tr>

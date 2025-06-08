@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 头部 -->
+@layout("/layout/header.html"){
+	<link rel="stylesheet" href="${ctxPath!}/static/ztree/metro.css" />
+	<link rel="stylesheet" href="${ctxPath}/static/validate/css/validform.css" />
+	<link rel="stylesheet" href="${ctxPath!}/static/css/custom.css" />
+@}
+
+<!-- 顶部条 -->
+@layout("/layout/navbar.html"){}
+
+<!-- 主体 -->
+@layout("/layout/main.html",{menuList:menuList!}){
+	<div id="fill-main-content" style="height:100%" width="100%">
+	<style>
+<!--
+.layer{
+width:970px;
+height:500px;
+}
+-->
+</style>
+<div class="row">
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+								<div class="row">
+									<div class="col-xs-12 col-sm-6 widget-container-col">
+										<!-- #section:custom/widget-box -->
+										<div class="widget-box">
+											<div class="widget-header">
+												<h5 class="widget-title">Default Widget Box</h5>
+
+												<!-- #section:custom/widget-box.toolbar -->
+												<div class="widget-toolbar">
+													<div class="widget-menu">
+														<a href="#" data-action="settings" data-toggle="dropdown">
+															<i class="ace-icon fa fa-bars"></i>
+														</a>
+
+														<ul class="dropdown-menu dropdown-menu-right dropdown-light-blue dropdown-caret dropdown-closer">
+															<li>
+																<a data-toggle="tab" href="#dropdown1">Option#1</a>
+															</li>
+
+															<li>
+																<a data-toggle="tab" href="#dropdown2">Option#2</a>
+															</li>
+														</ul>
+													</div>
+
+													<a href="#" data-action="fullscreen" class="orange2">
+														<i class="ace-icon fa fa-expand"></i>
+													</a>
+
+													<a href="#" data-action="reload">
+														<i class="ace-icon fa fa-refresh"></i>
+													</a>
+
+													<a href="#" data-action="collapse">
+														<i class="ace-icon fa fa-chevron-up"></i>
+													</a>
+
+													<a href="#" data-action="close">
+														<i class="ace-icon fa fa-times"></i>
+													</a>
+												</div>
+
+												<!-- /section:custom/widget-box.toolbar -->
+											</div>
+
+											<div class="widget-body">
+												<div class="widget-main">
+													<p class="alert alert-info">
+														Nunc aliquam enim ut arcu aliquet adipiscing. Fusce dignissim volutpat justo non consectetur. Nulla fringilla eleifend consectetur.
+													</p>
+													<p class="alert alert-success">
+														Raw denim you probably haven't heard of them jean shorts Austin.
+													</p>
+												</div>
+											</div>
+										</div>
+
+										<!-- /section:custom/widget-box -->
+									</div>
+									</div>
+									</div>
+									</div>
+									
+<div class="tabbable11">
+	<ul class="nav nav-tabs" id="myTab">
+		<li class="active"><a data-toggle="tab" href="#tab1"> <i
+				class="green ace-icon fa fa-list-alt bigger-120"></i> 使用技术
+		</a></li>
+		<li class=""><a data-toggle="tab" href="#tab2"> <i
+				class="green ace-icon fa fa-plus bigger-120"></i>已实现功能
+		</a></li>
+		<li class=""><a data-toggle="tab" href="#tab3"> <i
+				class="green ace-icon fa fa-plus bigger-120"></i>待研发功能
+		</a></li>
+		<li class=""><a data-toggle="tab" href="#tab4"> <i
+				class="green ace-icon fa fa-plus bigger-120"></i>更新记录
+		</a></li>
+	</ul>
+	<form name="FormPost1" id="kh-save" class="FormGrid" method="post"
+			action="${ctxPath}/kh/save">
+	<div class="tab-content">
+	
+			<div id="tab1" class="tab-pane active clearfix">
+				<div class="layer">
+				<ul>
+				<li>dubbo zookeep</li>
+				<li>redis mongodb</li>
+				<li>Servlet 3.0</li><li>Spring4</li><li>SpringMVC</li><li>MyBatis</li>
+				<li>模板引擎beetl</li><li>前端bootstrap</li><li>数据源druid</li><li>缓存ehcache</li><li>MyBatis分页插件PageHelper</li>
+				<li></li><li>MyBatis通用Mapper</li><li></li>
+				</ul>
+					
+				</div>
+			</div>
+			<div id="tab2" class="tab-pane">
+				<div class="layer">
+				<ul>
+				<li>系统管理</li>
+				<li> 菜单管理</li>
+				<li>字典管理 </li>
+				<li>日志管理 </li>
+				<li>机构用户 </li>
+				<li>区域管理 </li>
+				<li>机构管理 </li>
+				<li>用户管理 </li>
+				<li>角色管理 </li>
+				<li>系统监控 </li>
+				<li>ehcache监控 </li>
+				<li>jvm监控 </li>
+				<li>执行sql </li>
+				<li> 数据库监控</li>
+				<li>文件服务器已搭建 </li>
+				</ul>
+			
+				</div>
+			</div>
+			<div id="tab3" class="tab-pane">
+				<div class="layer">
+					<ul>
+					<li>blog模块已搭建，功能实现中。。。。。</li>
+					<li>oa模块已搭建，功能实现中。。。。。</li>
+					<li>cms模块已搭建，功能实现中。。。。。</li>
+					<li>mall模块已搭建，功能实现中。。。。。</li>
+					<li>solr模块已搭建，功能实现中。。。。。</li>
+					<li>sso模块已搭建，功能实现中。。。。。</li>
+					<li>rest模块已搭建，功能实现中。。。。。</li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="tab4" class="tab-pane">
+				<div class="layer">
+				<ul>
+				<li>20160506 图片上传到文件服务器   PictureController
+				redis配置   com.zsCat.common.jedis</li>
+				</ul>
+					
+				</div>
+
+			</div>
+		
+	</div>
+
+</form>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+
+</script>
+	</div>
+@}
+
+<!-- 底部 -->
+@layout("/layout/footer.html"){
+	<script src="${ctxPath!}/static/js/history.js"></script>
+	<script type="text/javascript" src="${ctxPath!}/static/layer/layer.js"></script>
+	<!-- <script type="text/javascript" src="${ctxPath!}/static/layer/layer.min.js"></script> -->
+	<script type="text/javascript" src="${ctxPath!}/static/js/spin.min.js"></script>
+	<script type="text/javascript" src="${ctxPath!}/static/ztree/jquery.ztree.all-3.5.min.js"></script>
+	<script type="text/javascript" src="${ctxPath!}/static/js/jquery.autosize.min.js"></script>
+	<script type="text/javascript" src="${ctxPath!}/static/chosen/chosen.jquery.min.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/validate/Validform_v5.3.2_min.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/jquery.form.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/bootstrap-contextmenu.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/jquery.nicescroll.min.js"></script>
+	<script type="text/javascript" src="${ctxPath}/static/js/public.js"></script>
+@}		
+
+</body>
+</html>

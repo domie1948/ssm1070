@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zsCat.web.goods.mapper.GoodsMapper">
+
+	<sql id="goodsGoodsColumns">
+		id,goods_name,goods_subtitle,gc_id,gc_name,brand_id,brand_name,type_id,store_id,store_name,spec_open,spec_id,spec_name,goods_image,goods_image_more,goods_store_price,goods_serial,goods_show,goods_click,goods_state,goods_commend,create_time,goods_keywords,goods_description,goods_body,goods_attr,goods_spec,goods_col_img,update_time,start_time,end_time,goods_form,transport_id,py_price,kd_price,es_price,city_id,city_name,province_id,province_name,goods_close_reason,goods_store_state,commentnum,salenum,goods_collect,goods_transfee_charge,store_class_id,is_del,goods_market_price,goods_cost_price
+	</sql>
+
+<!-- 菜单管理分页显示筛选查询 -->
+	<select id="selectFavoritePageInfo" resultType="com.zsCat.web.goods.model.Goods">
+		select g.id,g.goods_image,g.goods_name ,g.goods_store_price,g.salenum from shop_favorites f LEFT JOIN shop_goods g
+     	on f.fav_id=g.id where f.member_id=#{memberId}  ORDER BY f.fav_time desc
+	</select>
+</mapper>

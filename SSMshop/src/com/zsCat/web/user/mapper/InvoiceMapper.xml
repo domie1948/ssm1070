@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zsCat.web.user.mapper.InvoiceMapper">
+
+	<sql id="userInvoiceColumns">
+		id,member_id,inv_state,inv_title,inv_content,inv_company,inv_code,inv_reg_addr,inv_reg_phone,inv_reg_bname,inv_reg_baccount,inv_rec_name,inv_rec_mobphone,inv_rec_province,inv_goto_addr,is_default
+	</sql>
+
+</mapper>

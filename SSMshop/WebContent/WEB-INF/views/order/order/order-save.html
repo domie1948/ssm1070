@@ -1,0 +1,366 @@
+<div class="layer">
+	<form name="FormPost" id="order-save" class="FormGrid"  method="post"
+		action="${ctxPath}/order/save">
+		
+		<input type="hidden" value="${order.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">订单编号</td>
+			<td class="DataTD width-100"><input type="text" name="orderSn" datatype="*"
+			nullmsg="请输入订单编号！" value="${order.orderSn!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">卖家店铺id</td>
+			<td class="DataTD width-100"><input type="text" name="storeId" datatype="*"
+			nullmsg="请输入卖家店铺id！" value="${order.storeId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">卖家店铺名称</td>
+			<td class="DataTD width-100"><input type="text" name="storeName" datatype="*"
+			nullmsg="请输入卖家店铺名称！" value="${order.storeName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">买家id</td>
+			<td class="DataTD width-100"><input type="text" name="buyerId" datatype="*"
+			nullmsg="请输入买家id！" value="${order.buyerId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">买家姓名</td>
+			<td class="DataTD width-100"><input type="text" name="buyerName" datatype="*"
+			nullmsg="请输入买家姓名！" value="${order.buyerName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">买家电子邮箱</td>
+			<td class="DataTD width-100"><input type="text" name="buyerEmail" datatype="*"
+			nullmsg="请输入买家电子邮箱！" value="${order.buyerEmail!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">订单生成时间</td>
+			<td class="DataTD width-100"><input type="text" name="createTime" datatype="*"
+			nullmsg="请输入订单生成时间！" value="${order.createTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">订单类型 0.普通 1.团购</td>
+			<td class="DataTD width-100"><input type="text" name="orderType" datatype="*"
+			nullmsg="请输入订单类型 0.普通 1.团购！" value="${order.orderType!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">支付方式id</td>
+			<td class="DataTD width-100"><input type="text" name="paymentId" datatype="*"
+			nullmsg="请输入支付方式id！" value="${order.paymentId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">支付方式名称</td>
+			<td class="DataTD width-100"><input type="text" name="paymentName" datatype="*"
+			nullmsg="请输入支付方式名称！" value="${order.paymentName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">支付方式名称代码</td>
+			<td class="DataTD width-100"><input type="text" name="paymentCode" datatype="*"
+			nullmsg="请输入支付方式名称代码！" value="${order.paymentCode!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">支付分支</td>
+			<td class="DataTD width-100"><input type="text" name="paymentBranch" datatype="*"
+			nullmsg="请输入支付分支！" value="${order.paymentBranch!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">支付类型:1是即时到帐,2是担保交易</td>
+			<td class="DataTD width-100"><input type="text" name="paymentDirect" datatype="*"
+			nullmsg="请输入支付类型:1是即时到帐,2是担保交易！" value="${order.paymentDirect!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">付款状态:0:未付款;1:已付款</td>
+			<td class="DataTD width-100"><input type="text" name="paymentState" datatype="*"
+			nullmsg="请输入付款状态:0:未付款;1:已付款！" value="${order.paymentState!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">订单编号，外部支付时使用，有些外部支付系统要求特定的订单编号</td>
+			<td class="DataTD width-100"><input type="text" name="outSn" datatype="*"
+			nullmsg="请输入订单编号，外部支付时使用，有些外部支付系统要求特定的订单编号！" value="${order.outSn!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">交易流水号</td>
+			<td class="DataTD width-100"><input type="text" name="tradeSn" datatype="*"
+			nullmsg="请输入交易流水号！" value="${order.tradeSn!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">支付(付款)时间</td>
+			<td class="DataTD width-100"><input type="text" name="paymentTime" datatype="*"
+			nullmsg="请输入支付(付款)时间！" value="${order.paymentTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">支付留言</td>
+			<td class="DataTD width-100"><input type="text" name="payMessage" datatype="*"
+			nullmsg="请输入支付留言！" value="${order.payMessage!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">配送时间</td>
+			<td class="DataTD width-100"><input type="text" name="shippingTime" datatype="*"
+			nullmsg="请输入配送时间！" value="${order.shippingTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">配送公司ID</td>
+			<td class="DataTD width-100"><input type="text" name="shippingExpressId" datatype="*"
+			nullmsg="请输入配送公司ID！" value="${order.shippingExpressId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">物流单号</td>
+			<td class="DataTD width-100"><input type="text" name="shippingCode" datatype="*"
+			nullmsg="请输入物流单号！" value="${order.shippingCode!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">外部交易平台单独使用的标识字符串</td>
+			<td class="DataTD width-100"><input type="text" name="outPaymentCode" datatype="*"
+			nullmsg="请输入外部交易平台单独使用的标识字符串！" value="${order.outPaymentCode!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">订单完成时间</td>
+			<td class="DataTD width-100"><input type="text" name="finnshedTime" datatype="*"
+			nullmsg="请输入订单完成时间！" value="${order.finnshedTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">发票信息</td>
+			<td class="DataTD width-100"><input type="text" name="invoice" datatype="*"
+			nullmsg="请输入发票信息！" value="${order.invoice!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品总价格</td>
+			<td class="DataTD width-100"><input type="text" name="goodsAmount" datatype="*"
+			nullmsg="请输入商品总价格！" value="${order.goodsAmount!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">优惠总金额</td>
+			<td class="DataTD width-100"><input type="text" name="discount" datatype="*"
+			nullmsg="请输入优惠总金额！" value="${order.discount!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">订单应付金额</td>
+			<td class="DataTD width-100"><input type="text" name="orderAmount" datatype="*"
+			nullmsg="请输入订单应付金额！" value="${order.orderAmount!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">订单总价格</td>
+			<td class="DataTD width-100"><input type="text" name="orderTotalPrice" datatype="*"
+			nullmsg="请输入订单总价格！" value="${order.orderTotalPrice!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">运费价格</td>
+			<td class="DataTD width-100"><input type="text" name="shippingFee" datatype="*"
+			nullmsg="请输入运费价格！" value="${order.shippingFee!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">配送方式</td>
+			<td class="DataTD width-100"><input type="text" name="shippingName" datatype="*"
+			nullmsg="请输入配送方式！" value="${order.shippingName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">评价状态 0为评价，1已评价</td>
+			<td class="DataTD width-100"><input type="text" name="evaluationStatus" datatype="*"
+			nullmsg="请输入评价状态 0为评价，1已评价！" value="${order.evaluationStatus!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">评价时间</td>
+			<td class="DataTD width-100"><input type="text" name="evaluationTime" datatype="*"
+			nullmsg="请输入评价时间！" value="${order.evaluationTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">卖家是否已评价买家</td>
+			<td class="DataTD width-100"><input type="text" name="evalsellerStatus" datatype="*"
+			nullmsg="请输入卖家是否已评价买家！" value="${order.evalsellerStatus!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">卖家评价买家的时间</td>
+			<td class="DataTD width-100"><input type="text" name="evalsellerTime" datatype="*"
+			nullmsg="请输入卖家评价买家的时间！" value="${order.evalsellerTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">订单留言</td>
+			<td class="DataTD width-100"><input type="text" name="orderMessage" datatype="*"
+			nullmsg="请输入订单留言！" value="${order.orderMessage!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">订单状态：0:已取消;10:待付款;20:待发货;30:待收货;40:交易完成;50:已提交;60:已确认;</td>
+			<td class="DataTD width-100"><input type="text" name="orderState" datatype="*"
+			nullmsg="请输入订单状态：0:已取消;10:待付款;20:待发货;30:待收货;40:交易完成;50:已提交;60:已确认;！" value="${order.orderState!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">订单赠送积分</td>
+			<td class="DataTD width-100"><input type="text" name="orderPointscount" datatype="*"
+			nullmsg="请输入订单赠送积分！" value="${order.orderPointscount!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">代金券id</td>
+			<td class="DataTD width-100"><input type="text" name="voucherId" datatype="*"
+			nullmsg="请输入代金券id！" value="${order.voucherId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">代金券面额</td>
+			<td class="DataTD width-100"><input type="text" name="voucherPrice" datatype="*"
+			nullmsg="请输入代金券面额！" value="${order.voucherPrice!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">代金券编码</td>
+			<td class="DataTD width-100"><input type="text" name="voucherCode" datatype="*"
+			nullmsg="请输入代金券编码！" value="${order.voucherCode!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">退款状态:0是无退款,1是部分退款,2是全部退款</td>
+			<td class="DataTD width-100"><input type="text" name="refundState" datatype="*"
+			nullmsg="请输入退款状态:0是无退款,1是部分退款,2是全部退款！" value="${order.refundState!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">退货状态:0是无退货,1是部分退货,2是全部退货</td>
+			<td class="DataTD width-100"><input type="text" name="returnState" datatype="*"
+			nullmsg="请输入退货状态:0是无退货,1是部分退货,2是全部退货！" value="${order.returnState!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">退款金额</td>
+			<td class="DataTD width-100"><input type="text" name="refundAmount" datatype="*"
+			nullmsg="请输入退款金额！" value="${order.refundAmount!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">退货数量</td>
+			<td class="DataTD width-100"><input type="text" name="returnNum" datatype="*"
+			nullmsg="请输入退货数量！" value="${order.returnNum!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">团购编号(非团购订单为0)</td>
+			<td class="DataTD width-100"><input type="text" name="groupId" datatype="*"
+			nullmsg="请输入团购编号(非团购订单为0)！" value="${order.groupId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">团购数量</td>
+			<td class="DataTD width-100"><input type="text" name="groupCount" datatype="*"
+			nullmsg="请输入团购数量！" value="${order.groupCount!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD"> 限时折扣编号</td>
+			<td class="DataTD width-100"><input type="text" name="xianshiId" datatype="*"
+			nullmsg="请输入 限时折扣编号！" value="${order.xianshiId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">限时折扣说明</td>
+			<td class="DataTD width-100"><input type="text" name="xianshiExplain" datatype="*"
+			nullmsg="请输入限时折扣说明！" value="${order.xianshiExplain!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">满就送编号</td>
+			<td class="DataTD width-100"><input type="text" name="mansongId" datatype="*"
+			nullmsg="请输入满就送编号！" value="${order.mansongId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">满就送说明</td>
+			<td class="DataTD width-100"><input type="text" name="mansongExplain" datatype="*"
+			nullmsg="请输入满就送说明！" value="${order.mansongExplain!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">搭配套餐id</td>
+			<td class="DataTD width-100"><input type="text" name="bundlingId" datatype="*"
+			nullmsg="请输入搭配套餐id！" value="${order.bundlingId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">搭配套餐说明</td>
+			<td class="DataTD width-100"><input type="text" name="bundlingExplain" datatype="*"
+			nullmsg="请输入搭配套餐说明！" value="${order.bundlingExplain!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">1PC2手机端</td>
+			<td class="DataTD width-100"><input type="text" name="orderFrom" datatype="*"
+			nullmsg="请输入1PC2手机端！" value="${order.orderFrom!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">发货备注</td>
+			<td class="DataTD width-100"><input type="text" name="deliverExplain" datatype="*"
+			nullmsg="请输入发货备注！" value="${order.deliverExplain!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">发货地址ID</td>
+			<td class="DataTD width-100"><input type="text" name="daddressId" datatype="*"
+			nullmsg="请输入发货地址ID！" value="${order.daddressId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">收货地址id</td>
+			<td class="DataTD width-100"><input type="text" name="addressId" datatype="*"
+			nullmsg="请输入收货地址id！" value="${order.addressId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">订单支付表id</td>
+			<td class="DataTD width-100"><input type="text" name="payId" datatype="*"
+			nullmsg="请输入订单支付表id！" value="${order.payId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">订单支付表编号</td>
+			<td class="DataTD width-100"><input type="text" name="paySn" datatype="*"
+			nullmsg="请输入订单支付表编号！" value="${order.paySn!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">结算状态:0,未结算,1已结算</td>
+			<td class="DataTD width-100"><input type="text" name="balanceState" datatype="*"
+			nullmsg="请输入结算状态:0,未结算,1已结算！" value="${order.balanceState!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">结算时间</td>
+			<td class="DataTD width-100"><input type="text" name="balanceTime" datatype="*"
+			nullmsg="请输入结算时间！" value="${order.balanceTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">配送公司编号</td>
+			<td class="DataTD width-100"><input type="text" name="shippingExpressCode" datatype="*"
+			nullmsg="请输入配送公司编号！" value="${order.shippingExpressCode!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">余额支付金额</td>
+			<td class="DataTD width-100"><input type="text" name="predepositAmount" datatype="*"
+			nullmsg="请输入余额支付金额！" value="${order.predepositAmount!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">订单取消原因</td>
+			<td class="DataTD width-100"><input type="text" name="cancelCause" datatype="*"
+			nullmsg="请输入订单取消原因！" value="${order.cancelCause!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">优惠券id</td>
+			<td class="DataTD width-100"><input type="text" name="couponId" datatype="*"
+			nullmsg="请输入优惠券id！" value="${order.couponId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">优惠券金额</td>
+			<td class="DataTD width-100"><input type="text" name="couponPrice" datatype="*"
+			nullmsg="请输入优惠券金额！" value="${order.couponPrice!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">促销金额</td>
+			<td class="DataTD width-100"><input type="text" name="promoPrice" datatype="*"
+			nullmsg="请输入促销金额！" value="${order.promoPrice!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">锁定状态:0是正常,大于0是锁定,默认是0</td>
+			<td class="DataTD width-100"><input type="text" name="lockState" datatype="*"
+			nullmsg="请输入锁定状态:0是正常,大于0是锁定,默认是0！" value="${order.lockState!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${order.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="order-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

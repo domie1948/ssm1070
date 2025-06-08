@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zsCat.web.order.mapper.OrderCommonMapper">
+
+	<sql id="orderOrderCommonColumns">
+		id,order_id,store_id,shipping_express_id,evalseller_state,order_message,order_pointscount,voucher_price,voucher_code,deliver_explain,daddress_id,reciver_name,reciver_info,reciver_province_id,invoice_info,promotion_info,shipping_time,evaluation_time,evalseller_time
+	</sql>
+
+</mapper>

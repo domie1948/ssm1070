@@ -1,0 +1,56 @@
+<div class="layer">
+	<form name="FormPost" id="goodsAttrIndex-save" class="FormGrid"  method="post"
+		action="${ctxPath}/goodsAttrIndex/save">
+		
+		<input type="hidden" value="${goodsAttrIndex.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">商品id</td>
+			<td class="DataTD width-100"><input type="text" name="goodsId" datatype="*"
+			nullmsg="请输入商品id！" value="${goodsAttrIndex.goodsId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品分类id</td>
+			<td class="DataTD width-100"><input type="text" name="gcId" datatype="*"
+			nullmsg="请输入商品分类id！" value="${goodsAttrIndex.gcId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">类型id</td>
+			<td class="DataTD width-100"><input type="text" name="typeId" datatype="*"
+			nullmsg="请输入类型id！" value="${goodsAttrIndex.typeId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">属性id</td>
+			<td class="DataTD width-100"><input type="text" name="attrId" datatype="*"
+			nullmsg="请输入属性id！" value="${goodsAttrIndex.attrId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">属性值id</td>
+			<td class="DataTD width-100"><input type="text" name="attrValueId" datatype="*"
+			nullmsg="请输入属性值id！" value="${goodsAttrIndex.attrValueId!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${goodsAttrIndex.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="goodsAttrIndex-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

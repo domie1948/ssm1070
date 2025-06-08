@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zsCat.web.order.mapper.OrderMapper">
+
+	<sql id="orderOrderColumns">
+		id,order_sn,store_id,store_name,buyer_id,buyer_name,buyer_email,create_time,order_type,payment_id,payment_name,payment_code,payment_branch,payment_direct,payment_state,out_sn,trade_sn,payment_time,pay_message,shipping_time,shipping_express_id,shipping_code,out_payment_code,finnshed_time,invoice,goods_amount,discount,order_amount,order_total_price,shipping_fee,shipping_name,evaluation_status,evaluation_time,evalseller_status,evalseller_time,order_message,order_state,order_pointscount,voucher_id,voucher_price,voucher_code,refund_state,return_state,refund_amount,return_num,group_id,group_count,xianshi_id,xianshi_explain,mansong_id,mansong_explain,bundling_id,bundling_explain,order_from,deliver_explain,daddress_id,address_id,pay_id,pay_sn,balance_state,balance_time,shipping_express_code,predeposit_amount,cancel_cause,coupon_id,coupon_price,promo_price,lock_state
+	</sql>
+
+</mapper>

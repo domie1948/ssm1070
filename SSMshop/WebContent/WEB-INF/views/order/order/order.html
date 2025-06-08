@@ -1,0 +1,317 @@
+<div class="tabbable">
+	<ul class="nav nav-tabs" id="myTab">
+		<li class="active"><a data-toggle="tab" href="#home"> <i
+				class="green ace-icon fa fa-list-alt bigger-120"></i> 列表
+		</a></li>
+		@if(auth.hasPermission("order:order:add")){
+		<li class=""><a data-toggle="tab" href="#profile">
+		<i class="green ace-icon fa fa-plus bigger-120"></i> 添加
+		</a></li>
+		@}
+	</ul>
+
+	<div class="tab-content">
+		<div id="home" class="tab-pane active clearfix">
+			<form action="${ctxPath}/order/list" method="post" id="search-form" target="list-page" class="clearfix">
+				
+				<div class="pull-left width-30">
+					<label>描述：</label>
+					<input type="text" class="width-80" name="description"/>
+				</div>
+				<div class="pull-left"><span class="btn btn-info btn-sm " id="search-btn">查 询</span></div>
+			</form>
+			<hr/>
+			<div id="list-page"></div>
+			<script type="text/javascript">
+				$("#search-form").getPageList({'submitBtnId':'search-btn'})
+			</script>
+		</div>
+
+		<div id="profile" class="tab-pane">
+			<form action="${ctxPath!}/order/save" method="post" id="order-save-form">
+								<div class="center padding-10">
+			<label>订单编号：</label>
+			<input type="text" class="width-50" name="orderSn" datatype="*"  nullmsg="请输入订单编号！"/>
+		</div>
+		<div class="center padding-10">
+			<label>卖家店铺id：</label>
+			<input type="text" class="width-50" name="storeId" datatype="*"  nullmsg="请输入卖家店铺id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>卖家店铺名称：</label>
+			<input type="text" class="width-50" name="storeName" datatype="*"  nullmsg="请输入卖家店铺名称！"/>
+		</div>
+		<div class="center padding-10">
+			<label>买家id：</label>
+			<input type="text" class="width-50" name="buyerId" datatype="*"  nullmsg="请输入买家id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>买家姓名：</label>
+			<input type="text" class="width-50" name="buyerName" datatype="*"  nullmsg="请输入买家姓名！"/>
+		</div>
+		<div class="center padding-10">
+			<label>买家电子邮箱：</label>
+			<input type="text" class="width-50" name="buyerEmail" datatype="*"  nullmsg="请输入买家电子邮箱！"/>
+		</div>
+		<div class="center padding-10">
+			<label>订单生成时间：</label>
+			<input type="text" class="width-50" name="createTime" datatype="*"  nullmsg="请输入订单生成时间！"/>
+		</div>
+		<div class="center padding-10">
+			<label>订单类型 0.普通 1.团购：</label>
+			<input type="text" class="width-50" name="orderType" datatype="*"  nullmsg="请输入订单类型 0.普通 1.团购！"/>
+		</div>
+		<div class="center padding-10">
+			<label>支付方式id：</label>
+			<input type="text" class="width-50" name="paymentId" datatype="*"  nullmsg="请输入支付方式id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>支付方式名称：</label>
+			<input type="text" class="width-50" name="paymentName" datatype="*"  nullmsg="请输入支付方式名称！"/>
+		</div>
+		<div class="center padding-10">
+			<label>支付方式名称代码：</label>
+			<input type="text" class="width-50" name="paymentCode" datatype="*"  nullmsg="请输入支付方式名称代码！"/>
+		</div>
+		<div class="center padding-10">
+			<label>支付分支：</label>
+			<input type="text" class="width-50" name="paymentBranch" datatype="*"  nullmsg="请输入支付分支！"/>
+		</div>
+		<div class="center padding-10">
+			<label>支付类型:1是即时到帐,2是担保交易：</label>
+			<input type="text" class="width-50" name="paymentDirect" datatype="*"  nullmsg="请输入支付类型:1是即时到帐,2是担保交易！"/>
+		</div>
+		<div class="center padding-10">
+			<label>付款状态:0:未付款;1:已付款：</label>
+			<input type="text" class="width-50" name="paymentState" datatype="*"  nullmsg="请输入付款状态:0:未付款;1:已付款！"/>
+		</div>
+		<div class="center padding-10">
+			<label>订单编号，外部支付时使用，有些外部支付系统要求特定的订单编号：</label>
+			<input type="text" class="width-50" name="outSn" datatype="*"  nullmsg="请输入订单编号，外部支付时使用，有些外部支付系统要求特定的订单编号！"/>
+		</div>
+		<div class="center padding-10">
+			<label>交易流水号：</label>
+			<input type="text" class="width-50" name="tradeSn" datatype="*"  nullmsg="请输入交易流水号！"/>
+		</div>
+		<div class="center padding-10">
+			<label>支付(付款)时间：</label>
+			<input type="text" class="width-50" name="paymentTime" datatype="*"  nullmsg="请输入支付(付款)时间！"/>
+		</div>
+		<div class="center padding-10">
+			<label>支付留言：</label>
+			<input type="text" class="width-50" name="payMessage" datatype="*"  nullmsg="请输入支付留言！"/>
+		</div>
+		<div class="center padding-10">
+			<label>配送时间：</label>
+			<input type="text" class="width-50" name="shippingTime" datatype="*"  nullmsg="请输入配送时间！"/>
+		</div>
+		<div class="center padding-10">
+			<label>配送公司ID：</label>
+			<input type="text" class="width-50" name="shippingExpressId" datatype="*"  nullmsg="请输入配送公司ID！"/>
+		</div>
+		<div class="center padding-10">
+			<label>物流单号：</label>
+			<input type="text" class="width-50" name="shippingCode" datatype="*"  nullmsg="请输入物流单号！"/>
+		</div>
+		<div class="center padding-10">
+			<label>外部交易平台单独使用的标识字符串：</label>
+			<input type="text" class="width-50" name="outPaymentCode" datatype="*"  nullmsg="请输入外部交易平台单独使用的标识字符串！"/>
+		</div>
+		<div class="center padding-10">
+			<label>订单完成时间：</label>
+			<input type="text" class="width-50" name="finnshedTime" datatype="*"  nullmsg="请输入订单完成时间！"/>
+		</div>
+		<div class="center padding-10">
+			<label>发票信息：</label>
+			<input type="text" class="width-50" name="invoice" datatype="*"  nullmsg="请输入发票信息！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品总价格：</label>
+			<input type="text" class="width-50" name="goodsAmount" datatype="*"  nullmsg="请输入商品总价格！"/>
+		</div>
+		<div class="center padding-10">
+			<label>优惠总金额：</label>
+			<input type="text" class="width-50" name="discount" datatype="*"  nullmsg="请输入优惠总金额！"/>
+		</div>
+		<div class="center padding-10">
+			<label>订单应付金额：</label>
+			<input type="text" class="width-50" name="orderAmount" datatype="*"  nullmsg="请输入订单应付金额！"/>
+		</div>
+		<div class="center padding-10">
+			<label>订单总价格：</label>
+			<input type="text" class="width-50" name="orderTotalPrice" datatype="*"  nullmsg="请输入订单总价格！"/>
+		</div>
+		<div class="center padding-10">
+			<label>运费价格：</label>
+			<input type="text" class="width-50" name="shippingFee" datatype="*"  nullmsg="请输入运费价格！"/>
+		</div>
+		<div class="center padding-10">
+			<label>配送方式：</label>
+			<input type="text" class="width-50" name="shippingName" datatype="*"  nullmsg="请输入配送方式！"/>
+		</div>
+		<div class="center padding-10">
+			<label>评价状态 0为评价，1已评价：</label>
+			<input type="text" class="width-50" name="evaluationStatus" datatype="*"  nullmsg="请输入评价状态 0为评价，1已评价！"/>
+		</div>
+		<div class="center padding-10">
+			<label>评价时间：</label>
+			<input type="text" class="width-50" name="evaluationTime" datatype="*"  nullmsg="请输入评价时间！"/>
+		</div>
+		<div class="center padding-10">
+			<label>卖家是否已评价买家：</label>
+			<input type="text" class="width-50" name="evalsellerStatus" datatype="*"  nullmsg="请输入卖家是否已评价买家！"/>
+		</div>
+		<div class="center padding-10">
+			<label>卖家评价买家的时间：</label>
+			<input type="text" class="width-50" name="evalsellerTime" datatype="*"  nullmsg="请输入卖家评价买家的时间！"/>
+		</div>
+		<div class="center padding-10">
+			<label>订单留言：</label>
+			<input type="text" class="width-50" name="orderMessage" datatype="*"  nullmsg="请输入订单留言！"/>
+		</div>
+		<div class="center padding-10">
+			<label>订单状态：0:已取消;10:待付款;20:待发货;30:待收货;40:交易完成;50:已提交;60:已确认;：</label>
+			<input type="text" class="width-50" name="orderState" datatype="*"  nullmsg="请输入订单状态：0:已取消;10:待付款;20:待发货;30:待收货;40:交易完成;50:已提交;60:已确认;！"/>
+		</div>
+		<div class="center padding-10">
+			<label>订单赠送积分：</label>
+			<input type="text" class="width-50" name="orderPointscount" datatype="*"  nullmsg="请输入订单赠送积分！"/>
+		</div>
+		<div class="center padding-10">
+			<label>代金券id：</label>
+			<input type="text" class="width-50" name="voucherId" datatype="*"  nullmsg="请输入代金券id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>代金券面额：</label>
+			<input type="text" class="width-50" name="voucherPrice" datatype="*"  nullmsg="请输入代金券面额！"/>
+		</div>
+		<div class="center padding-10">
+			<label>代金券编码：</label>
+			<input type="text" class="width-50" name="voucherCode" datatype="*"  nullmsg="请输入代金券编码！"/>
+		</div>
+		<div class="center padding-10">
+			<label>退款状态:0是无退款,1是部分退款,2是全部退款：</label>
+			<input type="text" class="width-50" name="refundState" datatype="*"  nullmsg="请输入退款状态:0是无退款,1是部分退款,2是全部退款！"/>
+		</div>
+		<div class="center padding-10">
+			<label>退货状态:0是无退货,1是部分退货,2是全部退货：</label>
+			<input type="text" class="width-50" name="returnState" datatype="*"  nullmsg="请输入退货状态:0是无退货,1是部分退货,2是全部退货！"/>
+		</div>
+		<div class="center padding-10">
+			<label>退款金额：</label>
+			<input type="text" class="width-50" name="refundAmount" datatype="*"  nullmsg="请输入退款金额！"/>
+		</div>
+		<div class="center padding-10">
+			<label>退货数量：</label>
+			<input type="text" class="width-50" name="returnNum" datatype="*"  nullmsg="请输入退货数量！"/>
+		</div>
+		<div class="center padding-10">
+			<label>团购编号(非团购订单为0)：</label>
+			<input type="text" class="width-50" name="groupId" datatype="*"  nullmsg="请输入团购编号(非团购订单为0)！"/>
+		</div>
+		<div class="center padding-10">
+			<label>团购数量：</label>
+			<input type="text" class="width-50" name="groupCount" datatype="*"  nullmsg="请输入团购数量！"/>
+		</div>
+		<div class="center padding-10">
+			<label> 限时折扣编号：</label>
+			<input type="text" class="width-50" name="xianshiId" datatype="*"  nullmsg="请输入 限时折扣编号！"/>
+		</div>
+		<div class="center padding-10">
+			<label>限时折扣说明：</label>
+			<input type="text" class="width-50" name="xianshiExplain" datatype="*"  nullmsg="请输入限时折扣说明！"/>
+		</div>
+		<div class="center padding-10">
+			<label>满就送编号：</label>
+			<input type="text" class="width-50" name="mansongId" datatype="*"  nullmsg="请输入满就送编号！"/>
+		</div>
+		<div class="center padding-10">
+			<label>满就送说明：</label>
+			<input type="text" class="width-50" name="mansongExplain" datatype="*"  nullmsg="请输入满就送说明！"/>
+		</div>
+		<div class="center padding-10">
+			<label>搭配套餐id：</label>
+			<input type="text" class="width-50" name="bundlingId" datatype="*"  nullmsg="请输入搭配套餐id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>搭配套餐说明：</label>
+			<input type="text" class="width-50" name="bundlingExplain" datatype="*"  nullmsg="请输入搭配套餐说明！"/>
+		</div>
+		<div class="center padding-10">
+			<label>1PC2手机端：</label>
+			<input type="text" class="width-50" name="orderFrom" datatype="*"  nullmsg="请输入1PC2手机端！"/>
+		</div>
+		<div class="center padding-10">
+			<label>发货备注：</label>
+			<input type="text" class="width-50" name="deliverExplain" datatype="*"  nullmsg="请输入发货备注！"/>
+		</div>
+		<div class="center padding-10">
+			<label>发货地址ID：</label>
+			<input type="text" class="width-50" name="daddressId" datatype="*"  nullmsg="请输入发货地址ID！"/>
+		</div>
+		<div class="center padding-10">
+			<label>收货地址id：</label>
+			<input type="text" class="width-50" name="addressId" datatype="*"  nullmsg="请输入收货地址id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>订单支付表id：</label>
+			<input type="text" class="width-50" name="payId" datatype="*"  nullmsg="请输入订单支付表id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>订单支付表编号：</label>
+			<input type="text" class="width-50" name="paySn" datatype="*"  nullmsg="请输入订单支付表编号！"/>
+		</div>
+		<div class="center padding-10">
+			<label>结算状态:0,未结算,1已结算：</label>
+			<input type="text" class="width-50" name="balanceState" datatype="*"  nullmsg="请输入结算状态:0,未结算,1已结算！"/>
+		</div>
+		<div class="center padding-10">
+			<label>结算时间：</label>
+			<input type="text" class="width-50" name="balanceTime" datatype="*"  nullmsg="请输入结算时间！"/>
+		</div>
+		<div class="center padding-10">
+			<label>配送公司编号：</label>
+			<input type="text" class="width-50" name="shippingExpressCode" datatype="*"  nullmsg="请输入配送公司编号！"/>
+		</div>
+		<div class="center padding-10">
+			<label>余额支付金额：</label>
+			<input type="text" class="width-50" name="predepositAmount" datatype="*"  nullmsg="请输入余额支付金额！"/>
+		</div>
+		<div class="center padding-10">
+			<label>订单取消原因：</label>
+			<input type="text" class="width-50" name="cancelCause" datatype="*"  nullmsg="请输入订单取消原因！"/>
+		</div>
+		<div class="center padding-10">
+			<label>优惠券id：</label>
+			<input type="text" class="width-50" name="couponId" datatype="*"  nullmsg="请输入优惠券id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>优惠券金额：</label>
+			<input type="text" class="width-50" name="couponPrice" datatype="*"  nullmsg="请输入优惠券金额！"/>
+		</div>
+		<div class="center padding-10">
+			<label>促销金额：</label>
+			<input type="text" class="width-50" name="promoPrice" datatype="*"  nullmsg="请输入促销金额！"/>
+		</div>
+		<div class="center padding-10">
+			<label>锁定状态:0是正常,大于0是锁定,默认是0：</label>
+			<input type="text" class="width-50" name="lockState" datatype="*"  nullmsg="请输入锁定状态:0是正常,大于0是锁定,默认是0！"/>
+		</div>
+
+				<!-- <div class="center padding-10" >
+					<label style="vertical-align: top;">描述：</label>
+					<textarea type="text" class="width-50" name="description"></textarea>
+				</div> -->
+				<div class="margin-t15">
+					<span class="btn btn-info btn-block bigger-120" id="order-save-btn">保 存</span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+//日期框
+$('.date-picker').datepicker();
+</script>
+
+<#save isHide="yes" subBtnId="order-save-btn" formId="order-save-form" />

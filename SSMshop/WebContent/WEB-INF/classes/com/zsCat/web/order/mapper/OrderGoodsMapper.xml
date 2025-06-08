@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zsCat.web.order.mapper.OrderGoodsMapper">
+
+	<sql id="orderOrderGoodsColumns">
+		id,order_id,goods_id,goods_name,spec_id,spec_info,goods_price,goods_num,goods_image,goods_returnnum,stores_id,evaluation_status,evaluation_time,goods_pay_price,buyer_id,commis_rate,gc_id
+	</sql>
+
+</mapper>

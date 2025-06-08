@@ -1,0 +1,231 @@
+<div class="tabbable">
+	<ul class="nav nav-tabs" id="myTab">
+		<li class="active"><a data-toggle="tab" href="#home"> <i
+				class="green ace-icon fa fa-list-alt bigger-120"></i> 列表
+		</a></li>
+		@if(auth.hasPermission("goods:goods:add")){
+		<li class=""><a data-toggle="tab" href="#profile">
+		<i class="green ace-icon fa fa-plus bigger-120"></i> 添加
+		</a></li>
+		@}
+	</ul>
+
+	<div class="tab-content">
+		<div id="home" class="tab-pane active clearfix">
+			<form action="${ctxPath}/goods/list" method="post" id="search-form" target="list-page" class="clearfix">
+				
+				<div class="pull-left width-30">
+					<label>描述：</label>
+					<input type="text" class="width-80" name="description"/>
+				</div>
+				<div class="pull-left"><span class="btn btn-info btn-sm " id="search-btn">查 询</span></div>
+			</form>
+			<hr/>
+			<div id="list-page"></div>
+			<script type="text/javascript">
+				$("#search-form").getPageList({'submitBtnId':'search-btn'})
+			</script>
+		</div>
+
+		<div id="profile" class="tab-pane">
+			<form action="${ctxPath!}/goods/save" method="post" id="goods-save-form">
+								<div class="center padding-10">
+			<label>商品名称：</label>
+			<input type="text" class="width-50" name="goodsName" datatype="*"  nullmsg="请输入商品名称！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品副标题：</label>
+			<input type="text" class="width-50" name="goodsSubtitle" datatype="*"  nullmsg="请输入商品副标题！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品分类id：</label>
+			<input type="text" class="width-50" name="gcId" datatype="*"  nullmsg="请输入商品分类id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品分类名称：</label>
+			<input type="text" class="width-50" name="gcName" datatype="*"  nullmsg="请输入商品分类名称！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品品牌id：</label>
+			<input type="text" class="width-50" name="brandId" datatype="*"  nullmsg="请输入商品品牌id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>brandName：</label>
+			<input type="text" class="width-50" name="brandName" datatype="*"  nullmsg="请输入brandName！"/>
+		</div>
+		<div class="center padding-10">
+			<label>类型id：</label>
+			<input type="text" class="width-50" name="typeId" datatype="*"  nullmsg="请输入类型id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>店铺id：</label>
+			<input type="text" class="width-50" name="storeId" datatype="*"  nullmsg="请输入店铺id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>storeName：</label>
+			<input type="text" class="width-50" name="storeName" datatype="*"  nullmsg="请输入storeName！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品规格开启状态，1开启，0关闭：</label>
+			<input type="text" class="width-50" name="specOpen" datatype="*"  nullmsg="请输入商品规格开启状态，1开启，0关闭！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品默认对应的规格id：</label>
+			<input type="text" class="width-50" name="specId" datatype="*"  nullmsg="请输入商品默认对应的规格id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>规格名称：</label>
+			<input type="text" class="width-50" name="specName" datatype="*"  nullmsg="请输入规格名称！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品默认封面图片：</label>
+			<input type="text" class="width-50" name="goodsImage" datatype="*"  nullmsg="请输入商品默认封面图片！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品多图：</label>
+			<input type="text" class="width-50" name="goodsImageMore" datatype="*"  nullmsg="请输入商品多图！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品店铺价格：</label>
+			<input type="text" class="width-50" name="goodsStorePrice" datatype="*"  nullmsg="请输入商品店铺价格！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品货号：</label>
+			<input type="text" class="width-50" name="goodsSerial" datatype="*"  nullmsg="请输入商品货号！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品上架1上架0下架2定时上架：</label>
+			<input type="text" class="width-50" name="goodsShow" datatype="*"  nullmsg="请输入商品上架1上架0下架2定时上架！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品浏览数：</label>
+			<input type="text" class="width-50" name="goodsClick" datatype="*"  nullmsg="请输入商品浏览数！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品状态，0开启，1违规下架：</label>
+			<input type="text" class="width-50" name="goodsState" datatype="*"  nullmsg="请输入商品状态，0开启，1违规下架！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品推荐：</label>
+			<input type="text" class="width-50" name="goodsCommend" datatype="*"  nullmsg="请输入商品推荐！"/>
+		</div>
+		
+		<div class="center padding-10">
+			<label>商品关键字：</label>
+			<input type="text" class="width-50" name="goodsKeywords" datatype="*"  nullmsg="请输入商品关键字！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品描述：</label>
+			<input type="text" class="width-50" name="goodsDescription" datatype="*"  nullmsg="请输入商品描述！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品详细内容：</label>
+			<input type="text" class="width-50" name="goodsBody" datatype="*"  nullmsg="请输入商品详细内容！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品属性：</label>
+			<input type="text" class="width-50" name="goodsAttr" datatype="*"  nullmsg="请输入商品属性！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品规格：</label>
+			<input type="text" class="width-50" name="goodsSpec" datatype="*"  nullmsg="请输入商品规格！"/>
+		</div>
+		<div class="center padding-10">
+			<label>颜色自定义图片：</label>
+			<input type="text" class="width-50" name="goodsColImg" datatype="*"  nullmsg="请输入颜色自定义图片！"/>
+		</div>
+		
+		<div class="center padding-10">
+			<label>商品类型,1为全新、2为二手：</label>
+			<input type="text" class="width-50" name="goodsForm" datatype="*"  nullmsg="请输入商品类型,1为全新、2为二手！"/>
+		</div>
+		<div class="center padding-10">
+			<label>运费模板ID，不使用运费模板值为0：</label>
+			<input type="text" class="width-50" name="transportId" datatype="*"  nullmsg="请输入运费模板ID，不使用运费模板值为0！"/>
+		</div>
+		<div class="center padding-10">
+			<label>平邮：</label>
+			<input type="text" class="width-50" name="pyPrice" datatype="*"  nullmsg="请输入平邮！"/>
+		</div>
+		<div class="center padding-10">
+			<label>快递：</label>
+			<input type="text" class="width-50" name="kdPrice" datatype="*"  nullmsg="请输入快递！"/>
+		</div>
+		<div class="center padding-10">
+			<label>EMS：</label>
+			<input type="text" class="width-50" name="esPrice" datatype="*"  nullmsg="请输入EMS！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品所在地(市)：</label>
+			<input type="text" class="width-50" name="cityId" datatype="*"  nullmsg="请输入商品所在地(市)！"/>
+		</div>
+		<div class="center padding-10">
+			<label>cityName：</label>
+			<input type="text" class="width-50" name="cityName" datatype="*"  nullmsg="请输入cityName！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品所在地(省)：</label>
+			<input type="text" class="width-50" name="provinceId" datatype="*"  nullmsg="请输入商品所在地(省)！"/>
+		</div>
+		<div class="center padding-10">
+			<label>provinceName：</label>
+			<input type="text" class="width-50" name="provinceName" datatype="*"  nullmsg="请输入provinceName！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品违规下架原因：</label>
+			<input type="text" class="width-50" name="goodsCloseReason" datatype="*"  nullmsg="请输入商品违规下架原因！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品所在店铺状态 0开启 1关闭：</label>
+			<input type="text" class="width-50" name="goodsStoreState" datatype="*"  nullmsg="请输入商品所在店铺状态 0开启 1关闭！"/>
+		</div>
+		<div class="center padding-10">
+			<label>评论次数：</label>
+			<input type="text" class="width-50" name="commentnum" datatype="*"  nullmsg="请输入评论次数！"/>
+		</div>
+		<div class="center padding-10">
+			<label>售出数量：</label>
+			<input type="text" class="width-50" name="salenum" datatype="*"  nullmsg="请输入售出数量！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品收藏数量：</label>
+			<input type="text" class="width-50" name="goodsCollect" datatype="*"  nullmsg="请输入商品收藏数量！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品运费承担方式 默认 0为买家承担 1为卖家承担：</label>
+			<input type="text" class="width-50" name="goodsTransfeeCharge" datatype="*"  nullmsg="请输入商品运费承担方式 默认 0为买家承担 1为卖家承担！"/>
+		</div>
+		<div class="center padding-10">
+			<label>店铺自定义分类id：</label>
+			<input type="text" class="width-50" name="storeClassId" datatype="*"  nullmsg="请输入店铺自定义分类id！"/>
+		</div>
+		<div class="center padding-10">
+			<label>是否删除 0:未删除  1:已删除：</label>
+			<input type="text" class="width-50" name="isDel" datatype="*"  nullmsg="请输入是否删除 0:未删除  1:已删除！"/>
+		</div>
+		<div class="center padding-10">
+			<label>市场价：</label>
+			<input type="text" class="width-50" name="goodsMarketPrice" datatype="*"  nullmsg="请输入市场价！"/>
+		</div>
+		<div class="center padding-10">
+			<label>成本价：</label>
+			<input type="text" class="width-50" name="goodsCostPrice" datatype="*"  nullmsg="请输入成本价！"/>
+		</div>
+
+				<!-- <div class="center padding-10" >
+					<label style="vertical-align: top;">描述：</label>
+					<textarea type="text" class="width-50" name="description"></textarea>
+				</div> -->
+				<div class="margin-t15">
+					<span class="btn btn-info btn-block bigger-120" id="goods-save-btn">保 存</span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+//日期框
+$('.date-picker').datepicker();
+</script>
+
+<#save isHide="yes" subBtnId="goods-save-btn" formId="goods-save-form" />

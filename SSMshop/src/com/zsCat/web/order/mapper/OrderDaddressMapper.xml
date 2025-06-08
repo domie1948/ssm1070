@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zsCat.web.order.mapper.OrderDaddressMapper">
+
+	<sql id="orderOrderDaddressColumns">
+		address_id,store_id,seller_name,area_id,city_id,area_info,address,zip_code,tel_phone,mob_phone,company,content,is_default,province_id,order_id
+	</sql>
+
+</mapper>

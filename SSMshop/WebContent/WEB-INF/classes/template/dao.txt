@@ -1,0 +1,19 @@
+//Powered By ZSCAT, Since 2014 - 2020
+
+package com.zsCat.web.[model].mapper;
+
+import com.github.abel533.mapper.Mapper;
+import com.zsCat.web.[model].model.[entityClass];
+
+
+/**
+ * 
+ * @author [author] [date]
+ * @Email: 951449465@qq.com
+ * @version 4.0v
+ *	[description]
+ */
+public interface [entityClass]Mapper extends Mapper<[entityClass]>{
+	public List<[entityClass]> findPageInfo(Map<String, Object> params);
+	
+}

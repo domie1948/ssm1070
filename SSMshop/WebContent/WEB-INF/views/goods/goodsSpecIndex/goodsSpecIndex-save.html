@@ -1,0 +1,61 @@
+<div class="layer">
+	<form name="FormPost" id="goodsSpecIndex-save" class="FormGrid"  method="post"
+		action="${ctxPath}/goodsSpecIndex/save">
+		
+		<input type="hidden" value="${goodsSpecIndex.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">商品id</td>
+			<td class="DataTD width-100"><input type="text" name="goodsId" datatype="*"
+			nullmsg="请输入商品id！" value="${goodsSpecIndex.goodsId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品分类id</td>
+			<td class="DataTD width-100"><input type="text" name="gcId" datatype="*"
+			nullmsg="请输入商品分类id！" value="${goodsSpecIndex.gcId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">类型id</td>
+			<td class="DataTD width-100"><input type="text" name="typeId" datatype="*"
+			nullmsg="请输入类型id！" value="${goodsSpecIndex.typeId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">规格id</td>
+			<td class="DataTD width-100"><input type="text" name="spId" datatype="*"
+			nullmsg="请输入规格id！" value="${goodsSpecIndex.spId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">规格值id</td>
+			<td class="DataTD width-100"><input type="text" name="spValueId" datatype="*"
+			nullmsg="请输入规格值id！" value="${goodsSpecIndex.spValueId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">规格值名称</td>
+			<td class="DataTD width-100"><input type="text" name="spValueName" datatype="*"
+			nullmsg="请输入规格值名称！" value="${goodsSpecIndex.spValueName!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${goodsSpecIndex.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="goodsSpecIndex-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

@@ -1,0 +1,146 @@
+<div class="layer">
+	<form name="FormPost" id="coupon-save" class="FormGrid"  method="post"
+		action="${ctxPath}/coupon/save">
+		
+		<input type="hidden" value="${coupon.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">优惠券名称</td>
+			<td class="DataTD width-100"><input type="text" name="couponTitle" datatype="*"
+			nullmsg="请输入优惠券名称！" value="${coupon.couponTitle!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">couponType</td>
+			<td class="DataTD width-100"><input type="text" name="couponType" datatype="*"
+			nullmsg="请输入couponType！" value="${coupon.couponType!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">couponPic</td>
+			<td class="DataTD width-100"><input type="text" name="couponPic" datatype="*"
+			nullmsg="请输入couponPic！" value="${coupon.couponPic!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">优惠券描述</td>
+			<td class="DataTD width-100"><input type="text" name="couponDesc" datatype="*"
+			nullmsg="请输入优惠券描述！" value="${coupon.couponDesc!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">优惠券开始日期</td>
+			<td class="DataTD width-100"><input type="text" name="startTime" datatype="*"
+			nullmsg="请输入优惠券开始日期！" value="${coupon.startTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">优惠券截止日期</td>
+			<td class="DataTD width-100"><input type="text" name="endTime" datatype="*"
+			nullmsg="请输入优惠券截止日期！" value="${coupon.endTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">优惠金额</td>
+			<td class="DataTD width-100"><input type="text" name="couponPrice" datatype="*"
+			nullmsg="请输入优惠金额！" value="${coupon.couponPrice!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">金额限制</td>
+			<td class="DataTD width-100"><input type="text" name="couponLimit" datatype="*"
+			nullmsg="请输入金额限制！" value="${coupon.couponLimit!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">店铺id</td>
+			<td class="DataTD width-100"><input type="text" name="storeId" datatype="*"
+			nullmsg="请输入店铺id！" value="${coupon.storeId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">上架与下架状态:1下架，0上架</td>
+			<td class="DataTD width-100"><input type="text" name="couponState" datatype="*"
+			nullmsg="请输入上架与下架状态:1下架，0上架！" value="${coupon.couponState!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">总共数量</td>
+			<td class="DataTD width-100"><input type="text" name="couponStorage" datatype="*"
+			nullmsg="请输入总共数量！" value="${coupon.couponStorage!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">使用数量</td>
+			<td class="DataTD width-100"><input type="text" name="couponUsage" datatype="*"
+			nullmsg="请输入使用数量！" value="${coupon.couponUsage!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">是否锁定：1锁定，0未锁定</td>
+			<td class="DataTD width-100"><input type="text" name="couponLock" datatype="*"
+			nullmsg="请输入是否锁定：1锁定，0未锁定！" value="${coupon.couponLock!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">添加日期</td>
+			<td class="DataTD width-100"><input type="text" name="createTime" datatype="*"
+			nullmsg="请输入添加日期！" value="${coupon.createTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">分类</td>
+			<td class="DataTD width-100"><input type="text" name="couponClassId" datatype="*"
+			nullmsg="请输入分类！" value="${coupon.couponClassId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">点击次数</td>
+			<td class="DataTD width-100"><input type="text" name="couponClick" datatype="*"
+			nullmsg="请输入点击次数！" value="${coupon.couponClick!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">4STYLE STANDS FOR 4 COUPONS PER A4 PAGE, AND 8STYLE STANDS FOR 8 COUPONS PER A4 PAGE</td>
+			<td class="DataTD width-100"><input type="text" name="couponPrintStyle" datatype="*"
+			nullmsg="请输入4STYLE STANDS FOR 4 COUPONS PER A4 PAGE, AND 8STYLE STANDS FOR 8 COUPONS PER A4 PAGE！" value="${coupon.couponPrintStyle!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">0不推荐 1推荐到首页</td>
+			<td class="DataTD width-100"><input type="text" name="couponRecommend" datatype="*"
+			nullmsg="请输入0不推荐 1推荐到首页！" value="${coupon.couponRecommend!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">审核状态 0为待审核 1已通过 2未通过</td>
+			<td class="DataTD width-100"><input type="text" name="couponAllowstate" datatype="*"
+			nullmsg="请输入审核状态 0为待审核 1已通过 2未通过！" value="${coupon.couponAllowstate!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">审核备注</td>
+			<td class="DataTD width-100"><input type="text" name="couponAllowremark" datatype="*"
+			nullmsg="请输入审核备注！" value="${coupon.couponAllowremark!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">店铺名称</td>
+			<td class="DataTD width-100"><input type="text" name="storeName" datatype="*"
+			nullmsg="请输入店铺名称！" value="${coupon.storeName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品分类id</td>
+			<td class="DataTD width-100"><input type="text" name="couponGoodsId" datatype="*"
+			nullmsg="请输入商品分类id！" value="${coupon.couponGoodsId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">商品分类id</td>
+			<td class="DataTD width-100"><input type="text" name="couponGoodsClass_id" datatype="*"
+			nullmsg="请输入商品分类id！" value="${coupon.couponGoodsClass_id!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${coupon.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="coupon-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

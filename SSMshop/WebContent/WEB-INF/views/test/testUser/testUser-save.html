@@ -1,0 +1,46 @@
+<div class="layer">
+	<form name="FormPost" id="testUser-save" class="FormGrid"  method="post"
+		action="${ctxPath}/testUser/save">
+		
+		<input type="hidden" value="${testUser.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">用户名</td>
+			<td class="DataTD width-100"><input type="text" name="username" datatype="*"
+			nullmsg="请输入用户名！" value="${testUser.username!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">密码</td>
+			<td class="DataTD width-100"><input type="text" name="password" datatype="*"
+			nullmsg="请输入密码！" value="${testUser.password!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">昵称</td>
+			<td class="DataTD width-100"><input type="text" name="nickname" datatype="*"
+			nullmsg="请输入昵称！" value="${testUser.nickname!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${testUser.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="testUser-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

@@ -1,0 +1,56 @@
+<div class="layer">
+	<form name="FormPost" id="goodsWords-save" class="FormGrid"  method="post"
+		action="${ctxPath}/goodsWords/save">
+		
+		<input type="hidden" value="${goodsWords.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">keyword</td>
+			<td class="DataTD width-100"><input type="text" name="keyword" datatype="*"
+			nullmsg="请输入keyword！" value="${goodsWords.keyword!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">全拼</td>
+			<td class="DataTD width-100"><input type="text" name="quanping" datatype="*"
+			nullmsg="请输入全拼！" value="${goodsWords.quanping!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">关键词首字母</td>
+			<td class="DataTD width-100"><input type="text" name="shouzimu" datatype="*"
+			nullmsg="请输入关键词首字母！" value="${goodsWords.shouzimu!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">关键词出现次数</td>
+			<td class="DataTD width-100"><input type="text" name="wordsNum" datatype="*"
+			nullmsg="请输入关键词出现次数！" value="${goodsWords.wordsNum!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">修改时间</td>
+			<td class="DataTD width-100"><input type="text" name="updateTime" datatype="*"
+			nullmsg="请输入修改时间！" value="${goodsWords.updateTime!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${goodsWords.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="goodsWords-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

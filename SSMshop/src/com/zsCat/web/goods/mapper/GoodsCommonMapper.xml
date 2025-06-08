@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zsCat.web.goods.mapper.GoodsCommonMapper">
+
+	<sql id="goodsGoodsCommonColumns">
+		id,goods_name,goods_jingle,gc_id,gc_name,store_id,store_name,spec_name,spec_value,brand_id,brand_name,type_id,goods_image,goods_attr,goods_body,goods_state,goods_stateremark,goods_verify,goods_verifyremark,goods_lock,goods_addtime,goods_selltime,goods_specname,goods_price,goods_marketprice,goods_costprice,goods_discount,goods_serial,transport_id,transport_title,goods_commend,goods_freight,goods_vat,areaid_1,areaid_2,goods_stcids,plateid_top,plateid_bottom,is_del,create_time,update_time
+	</sql>
+
+</mapper>

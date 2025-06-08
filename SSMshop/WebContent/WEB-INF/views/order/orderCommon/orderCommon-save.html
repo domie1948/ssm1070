@@ -1,0 +1,121 @@
+<div class="layer">
+	<form name="FormPost" id="orderCommon-save" class="FormGrid"  method="post"
+		action="${ctxPath}/orderCommon/save">
+		
+		<input type="hidden" value="${orderCommon.id!}" name="id"/>
+		<table class="EditTable" width="100%">
+			<tbody>
+				<tr style="display: none;">
+					<td class="ui-state-error" id="FormError"></td>
+				</tr>
+								<tr class="FormData">
+			<td class="CaptionTD">订单索引id</td>
+			<td class="DataTD width-100"><input type="text" name="orderId" datatype="*"
+			nullmsg="请输入订单索引id！" value="${orderCommon.orderId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">店铺ID</td>
+			<td class="DataTD width-100"><input type="text" name="storeId" datatype="*"
+			nullmsg="请输入店铺ID！" value="${orderCommon.storeId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">配送公司ID</td>
+			<td class="DataTD width-100"><input type="text" name="shippingExpressId" datatype="*"
+			nullmsg="请输入配送公司ID！" value="${orderCommon.shippingExpressId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">卖家是否已评价买家</td>
+			<td class="DataTD width-100"><input type="text" name="evalsellerState" datatype="*"
+			nullmsg="请输入卖家是否已评价买家！" value="${orderCommon.evalsellerState!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">订单留言</td>
+			<td class="DataTD width-100"><input type="text" name="orderMessage" datatype="*"
+			nullmsg="请输入订单留言！" value="${orderCommon.orderMessage!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">订单赠送积分</td>
+			<td class="DataTD width-100"><input type="text" name="orderPointscount" datatype="*"
+			nullmsg="请输入订单赠送积分！" value="${orderCommon.orderPointscount!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">代金券面额</td>
+			<td class="DataTD width-100"><input type="text" name="voucherPrice" datatype="*"
+			nullmsg="请输入代金券面额！" value="${orderCommon.voucherPrice!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">代金券编码</td>
+			<td class="DataTD width-100"><input type="text" name="voucherCode" datatype="*"
+			nullmsg="请输入代金券编码！" value="${orderCommon.voucherCode!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">发货备注</td>
+			<td class="DataTD width-100"><input type="text" name="deliverExplain" datatype="*"
+			nullmsg="请输入发货备注！" value="${orderCommon.deliverExplain!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">发货地址ID</td>
+			<td class="DataTD width-100"><input type="text" name="daddressId" datatype="*"
+			nullmsg="请输入发货地址ID！" value="${orderCommon.daddressId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">收货人姓名</td>
+			<td class="DataTD width-100"><input type="text" name="reciverName" datatype="*"
+			nullmsg="请输入收货人姓名！" value="${orderCommon.reciverName!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">收货人其它信息</td>
+			<td class="DataTD width-100"><input type="text" name="reciverInfo" datatype="*"
+			nullmsg="请输入收货人其它信息！" value="${orderCommon.reciverInfo!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">收货人省级ID</td>
+			<td class="DataTD width-100"><input type="text" name="reciverProvinceId" datatype="*"
+			nullmsg="请输入收货人省级ID！" value="${orderCommon.reciverProvinceId!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">发票信息</td>
+			<td class="DataTD width-100"><input type="text" name="invoiceInfo" datatype="*"
+			nullmsg="请输入发票信息！" value="${orderCommon.invoiceInfo!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">促销信息备注</td>
+			<td class="DataTD width-100"><input type="text" name="promotionInfo" datatype="*"
+			nullmsg="请输入促销信息备注！" value="${orderCommon.promotionInfo!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">配送时间</td>
+			<td class="DataTD width-100"><input type="text" name="shippingTime" datatype="*"
+			nullmsg="请输入配送时间！" value="${orderCommon.shippingTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">评价时间</td>
+			<td class="DataTD width-100"><input type="text" name="evaluationTime" datatype="*"
+			nullmsg="请输入评价时间！" value="${orderCommon.evaluationTime!}"></td>
+		</tr>
+		<tr class="FormData">
+			<td class="CaptionTD">卖家评价买家的时间</td>
+			<td class="DataTD width-100"><input type="text" name="evalsellerTime" datatype="*"
+			nullmsg="请输入卖家评价买家的时间！" value="${orderCommon.evalsellerTime!}"></td>
+		</tr>
+
+				<!-- <tr class="FormData">
+					<td class="CaptionTD">描述</td>
+					<td class="DataTD">
+						<textarea name="description" class="autosize-transition form-control "
+						style="resize: none;">${orderCommon.description!}</textarea>	
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</form>
+</div>
+<#save formId="orderCommon-save" />
+
+<script type="text/javascript">
+
+//描述框自动扩张高度
+$('textarea[class*=autosize]').autosize({append: "\n"});
+//日期框
+$('.date-picker').datepicker();
+</script>

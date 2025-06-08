@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zsCat.web.goods.mapper.GoodsClassMapper">
+
+	<sql id="goodsGoodsClassColumns">
+		id,gc_name,gc_pic,type_id,type_name,gc_parent_id,gc_sort,gc_show,gc_title,gc_keywords,gc_description,gc_idpath,expen_scale,is_relate
+	</sql>
+
+</mapper>
